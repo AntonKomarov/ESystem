@@ -1,28 +1,54 @@
 package by.epamtc.komarov.module_4.task06;
 
+import java.util.Date;
+
 public class Runner {
 
     public static void main(String[] args) {
+        Date start = new Date();
 
-        int a1 = 2;
-        int d = 3;
-        int an;
-        int sn = 0;
-        int n;
+        System.out.println("int = " + getMaxIntBeforeOverflow(2,3));
+        System.out.println("long = " + getMaxLongBeforeOverflow(2,3));
 
+        Date finish = new Date();
+        System.out.println(finish.getTime() - start.getTime());
+    }
 
-        for (n = 0; ; n += d) {
+    public static int getMaxIntBeforeOverflow(int firstMemberProgression, int difference){
 
-            an = (a1 + d * (n - 1));
-            sn += (a1 + an) * 2 / 2;
+        int memberArithmeticProgression;
+        int arithmeticProgression;
+        double memberSum;
 
-            if(sn < Integer.MIN_VALUE )
+        for (memberArithmeticProgression = 2 ;; memberArithmeticProgression += difference) {
+
+            arithmeticProgression = (firstMemberProgression + difference * (memberArithmeticProgression - 1));
+            memberSum = (firstMemberProgression + arithmeticProgression) * (memberArithmeticProgression / 2.0);
+
+            if (memberSum > Integer.MAX_VALUE)
+                break;
+            else if (memberSum < Integer.MIN_VALUE)
                 break;
         }
+        return memberArithmeticProgression;
+    }
 
-        System.out.println("n = " + n);
-        System.out.println("an = " + an);
-        System.out.println("sn = " + sn);
+    public static long getMaxLongBeforeOverflow(int firstMemberProgression, int difference){
 
+        long memberArithmeticProgression;
+        long arithmeticProgression;
+        double memberSum;
+
+        for (memberArithmeticProgression = 2 ;; memberArithmeticProgression += difference) {
+
+            arithmeticProgression = (firstMemberProgression + difference * (memberArithmeticProgression - 1));
+            memberSum = (firstMemberProgression + arithmeticProgression) * (memberArithmeticProgression / 2.0);
+
+            if (memberSum > Long.MAX_VALUE)
+                break;
+            else if (memberSum < Long.MIN_VALUE)
+                break;
+        }
+        return memberArithmeticProgression;
     }
 }
