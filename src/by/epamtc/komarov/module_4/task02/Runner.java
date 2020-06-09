@@ -7,6 +7,7 @@ public class Runner {
     }
 
     public static int findDateByNumber (int number){
+
         int date = 0;
 
         if(number <= 31){

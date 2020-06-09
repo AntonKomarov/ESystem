@@ -7,6 +7,7 @@ public class Runner {
     }
 
     public static double calcFunction(double x){
+
         double functionResult = 0;
 
         if (x <= 13){

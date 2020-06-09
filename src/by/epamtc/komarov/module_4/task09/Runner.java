@@ -8,6 +8,7 @@ public class Runner {
 
     //(from +... toValue)
     public static long calcMultOfFactorialSum(int from, int toValue){
+
         long mult = 1;
         long preValue = 0;
 

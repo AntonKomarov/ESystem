@@ -3,6 +3,7 @@ package by.epamtc.komarov.module_4.task03;
 public class Runner {
 
     public static void main(String[] args) {
+
         int a = 5;
         int b = 6;
         int c = 7;

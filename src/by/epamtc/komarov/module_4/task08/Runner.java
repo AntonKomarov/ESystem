@@ -7,7 +7,9 @@ public class Runner {
     }
 
     public static int getFunctionResultOnTheSegment(int fromA, int toB, int step, int valueC){
+
         int functionResult = 0;
+
         for (int x = fromA; x <= toB; x += step) {
 
             if(x == 15) {
