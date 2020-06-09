@@ -1,4 +1,4 @@
-package by.epamtc.module_4.task10;
+package by.epamtc.komarov.module_4.task10;
 
 import java.util.Scanner;
 

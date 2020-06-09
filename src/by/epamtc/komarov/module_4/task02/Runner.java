@@ -1,4 +1,4 @@
-package by.epamtc.module_4.task02;
+package by.epamtc.komarov.module_4.task02;
 
 public class Runner {
 
