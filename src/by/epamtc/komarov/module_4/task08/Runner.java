@@ -15,7 +15,7 @@ public class Runner {
             if(x == 15) {
                 functionResult = (x + valueC) * 2;
             }
-            else if (x != 15) {
+            else {
                 functionResult = (x - valueC) + 6;
             }
         }
