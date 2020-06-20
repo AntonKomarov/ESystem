@@ -2,7 +2,7 @@ package by.epamtc.komarov.module_4.task10;
 
 import java.util.Scanner;
 
-public class Runner {
+public class Task10 {
 
     public static void main(String[] args) {
 

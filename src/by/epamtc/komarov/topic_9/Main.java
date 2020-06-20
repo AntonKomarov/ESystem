@@ -7,59 +7,47 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        String line = "I have a cat Sonya. " +
-                "Its a little over two years. " +
-                "It is a very good cat." +
-                "She was named Sonia because she loved to sleep. " +
-                "Her dream alternated with the game and food. " +
-                "She loved to play with a bow or a special ball with spikes. " +
-                "She is very nice and funny cat.";
+        String line = "I have a cat Sonya. She is very nice and is funny cat.";
 
-
-        System.out.println("even = " +getEvenSymbol(line));
-        System.out.println("uneven = " + getUnEvenSymbol(line));
-        System.out.println("calculation the same symbols = " + calcIteration(line));
-        System.out.println("percent of lowercase and uppercase = " + percentLowercaseUppercase(line));
-        System.out.println("upheaval = " + upheaval(line));
-        System.out.println("substring = " +  input(line, 5, "HHHH"));
-        System.out.println("remove substring = " + remove(line, "our"));
-        System.out.println("copy = " + copy(line, 11, 12));
-        System.out.println("length of line = " + getLengthLine(line));
-        System.out.println("value of input = " + calcInput(line, "is"));
-        inverse(line);
-        System.out.println("replace space on '*' = " + replaceSpace(line));
-        System.out.println("change symbol = " + change(line, 'a', 'b'));
-        System.out.println("find shortest word = " + findShortWord(line));
-        System.out.println("words = " + quantityWord(line));
-        System.out.println("change place for words = " + Arrays.toString(changePlace(line)));
-        System.out.println(findLong(line));
-        System.out.println("add space = " + addSpace(line, 6));
-
-        String palindrome = "А луна канула";
-        System.out.println(palindrome(palindrome));
-
-        System.out.println("change substring = " + exchangeSubstring(line, "good", "Technology"));
-
-        String number = "31212434123123+5132412351315215";
-        System.out.println("sum = " + calc(number));
-
-        System.out.println("delete words by length = " + deleteByLength("delete = " + line, 3));
-        System.out.println("delete Extra space = " + deleteExtraSpace(line));
-        System.out.println("higlight words = " + Arrays.toString(highlightWords(line)));
-
-
-
-
-
-        System.out.println();
+//        System.out.println("even = " + getEvenSymbol(line));
+//        System.out.println("uneven = " + getUnEvenSymbol(line));
+//        System.out.println("calculation the same symbols = " + calcIteration(line));
+//        System.out.println("percent of lowercase and uppercase = " + percentLowerUppercase(line));
+//        System.out.println("upheaval = " + getUpheaval(line));
+//        System.out.println("substring = " +  insert(line, 5, "HHHH"));
+//        System.out.println("remove substring = " + remove(line, "our"));
+//        System.out.println("copy = " + copySequence(line, 11, 12));
+//        System.out.println("length of line = " + getLength(line));
+//        System.out.println("value of input = " + calcInput(line, 'n'));
+//        inverse(line);
+//        System.out.println("replace space on '*' = " + replaceSpace(line));
+//        System.out.println("change symbol = " + change(line, 'a', 'b'));
+//        System.out.println("find shortest word = " + findShortWord(line));
+//        System.out.println("words = " + quantityWord(line));
+//        System.out.println("change place for words = " + Arrays.toString(changePlace(line)));
+//        System.out.println(findLong(line));
+//        System.out.println("add space = " + addSpace(line, 6));
+//
+//        String palindrome = "А луна канула";
+//        System.out.println(palindrome(palindrome));
+//
+//        System.out.println("change substring = " + exchangeSubstring(line, "good", "Technology"));
+//
+//        String number = "31212434123123+5132412351315215";
+//        System.out.println("sum = " + calc(number));
+//
+//        System.out.println("delete words by length = " + deleteByLength("delete = " + line, 3));
+//        System.out.println("delete Extra space = " + deleteExtraSpace(line));
+//        System.out.println("highlight words = " + Arrays.toString(highlightWords(line)));
 
     }
 
-
     public static Map calcIteration(String line){
-        Map<Character, Integer> map = new HashMap<>();
+              Map<Character, Integer> map = new HashMap<>();
+
         for (int i = 0; i < line.length(); ++i) {
             char c = line.charAt(i);
+
             if (Character.isLetter(c)) {
                 if (map.containsKey(c)) {
                     map.put(c, map.get(c) + 1);
@@ -71,34 +59,32 @@ public class Main {
         return map;
     }
 
-    public static String getEvenSymbol(String line) {
-        char[] l = new char[line.length()];
+    public static StringBuilder getEvenSymbol(String line) {
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < line.length(); i += 2) {
-            l[i] = line.charAt(i);
+            sb.append(line.charAt(i));
         }
 
-        line = String.valueOf(l);
-
-        return line;
+        return sb;
     }
 
-    public static String getUnEvenSymbol(String line) {
-        char[] sequence = new char[line.length()];
+    public static StringBuilder getUnEvenSymbol(String line) {
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 1; i < line.length(); i += 2) {
-            sequence[i] = line.charAt(i);
+            sb.append(line.charAt(i));
         }
 
-        line = String.valueOf(sequence);
-
-        return line;
+        return sb;
     }
 
-    public static String percentLowercaseUppercase(String line){
+    public static String percentLowerUppercase(String line){
+
         String str = line.replaceAll("\\W", "");
         String lowercase = str.replaceAll("[A-Z]", "");
         String uppercase = str.replaceAll("[a-z]", "");
+
         int hundredPercent = str.length();
         int lowercasePercent = (lowercase.length() * 100) / hundredPercent;
         int uppercasePercent = (uppercase.length() * 100) / hundredPercent;
@@ -107,6 +93,7 @@ public class Main {
     }
 
     public static StringBuilder deleteIteration(String line){
+
         StringBuilder sb = new StringBuilder(line);
         int index;
         for (int i = 0; i < line.length(); i++) {
@@ -119,12 +106,12 @@ public class Main {
         return sb;
     }
 
-    public static StringBuilder upheaval(String line){
+    public static StringBuilder getUpheaval(String line){
         StringBuilder sb = new StringBuilder(line);
         return sb.reverse();
     }
 
-    public static StringBuilder input(String line, int index, String word){
+    public static StringBuilder insert(String line, int index, String word){
         StringBuilder sb = new StringBuilder(line);
         return sb.insert(index, word);
     }
@@ -133,22 +120,26 @@ public class Main {
         return line.replaceAll(word, "");
     }
 
-    public static String copy(String line, int start, int end){
+    public static String copySequence(String line, int start, int end){
         StringBuilder sb = new StringBuilder(line);
         return sb.substring(start, end+1);
     }
 
-    public static int getLengthLine(String line) {
+    public static int getLength(String line) {
         return line.length();
     }
 
-    public static int calcInput(String line, String word){
-        String[] strArr = line.split(" ");
+    public static int calcInput(String line, char symbol){
+
+        char[] array = line.toCharArray();
         int count = 0;
-        for (int i = 0; i < strArr.length; i++) {
-            if(strArr[i].equals(word))
+
+        for (char element: array){
+            if(element == symbol){
                 count++;
+            }
         }
+
         return count;
     }
 
@@ -184,7 +175,7 @@ public class Main {
                 shortestWord = word;
             }
         }
-        return getLengthLine(shortestWord);
+        return getLength(shortestWord);
     }
 
     public static int quantityWord(String line){
@@ -260,12 +251,6 @@ public class Main {
         String[] strArray = s.split(" ");
         return strArray;
     }
-
-
-
-
-
-
 
     public static String findLong(String line){
         String[] strArr = line.split(" ");

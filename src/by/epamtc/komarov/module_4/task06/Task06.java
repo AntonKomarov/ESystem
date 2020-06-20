@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task06;
 
-public class Runner {
+public class Task06 {
 
     public static void main(String[] args) {
         System.out.println("int = " + getMaxIntBeforeOverflow(2,3));

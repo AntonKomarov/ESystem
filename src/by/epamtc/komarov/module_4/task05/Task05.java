@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task05;
 
-public class Runner {
+public class Task05 {
 
     public static void main(String[] args) {
         System.out.println("summa: " + getSumNumber(137));

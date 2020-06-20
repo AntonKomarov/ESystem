@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task02;
 
-public class Runner {
+public class Task02 {
 
     public static void main(String[] args) {
         System.out.println(findDateByNumber(128));

@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task03;
 
-public class Runner {
+public class Task03 {
 
     public static void main(String[] args) {
 

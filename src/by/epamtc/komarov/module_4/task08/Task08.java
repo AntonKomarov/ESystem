@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task08;
 
-public class Runner {
+public class Task08 {
 
     public static void main(String[] args) {
         System.out.println(getFunctionResultOnTheSegment(5, 40, 3, 7));
