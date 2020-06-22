@@ -1,6 +1,6 @@
 package by.epamtc.komarov.task_4.exercise1;
 
-public class Exercise {
+public class Exercise1 {
     public static void main(String[] args) {
         int n = 9;
         int[][] matrix = new int[n][n];

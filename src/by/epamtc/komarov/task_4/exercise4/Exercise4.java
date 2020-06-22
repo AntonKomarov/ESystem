@@ -1,6 +1,6 @@
 package by.epamtc.komarov.task_4.exercise4;
 
-public class Exercise {
+public class Exercise4 {
     public static void main(String[] args) {
         int n = 6;
         int[][] array = new int[n][n];
