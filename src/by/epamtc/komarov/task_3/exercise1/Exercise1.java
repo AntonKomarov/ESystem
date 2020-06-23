@@ -14,9 +14,9 @@ public class Exercise1 {
 
             if (sum > maxSum) {
                 maxSum = sum;
+                System.out.println("maxSum: array[" + i + "]" + "array[" + (array.length - i - 1) + "] = " + maxSum);
             }
         }
-        System.out.println("maximum sum elements in array: " + maxSum);
-
+        System.out.println("maximum sum of array elements: " + maxSum);
     }
 }
