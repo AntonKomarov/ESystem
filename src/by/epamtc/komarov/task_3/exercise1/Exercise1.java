@@ -6,11 +6,14 @@ public class Exercise1 {
 
         int[] array = new int[]{13,5,322,7,8,223,6,8,22,8};
         int maxSum = 0;
+        int sum;
 
         for (int i = 0; i < array.length / 2; i++) {
 
-            if ((array[i] + array[array.length - i - 1]) > maxSum) {
-                maxSum = array[i] + array[array.length - i - 1];
+            sum = array[i] + array[array.length - i - 1];
+
+            if (sum > maxSum) {
+                maxSum = sum;
                 System.out.println("maxSum: array[" + i + "]" + "array[" + (array.length - i - 1) + "] = " + maxSum);
             }
         }
