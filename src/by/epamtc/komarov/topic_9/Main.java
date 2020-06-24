@@ -7,7 +7,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        String line = "I have a cat Sonya. She is very nice and is funny cat.";
+        String line = "I have a cat Sonya. She is very nice and funny cat. She is 4 years old";
 
 //        System.out.println("even = " + getEvenSymbol(line));
 //        System.out.println("uneven = " + getUnEvenSymbol(line));
@@ -18,7 +18,7 @@ public class Main {
 //        System.out.println("remove substring = " + remove(line, "our"));
 //        System.out.println("copy = " + copySequence(line, 11, 12));
 //        System.out.println("length of line = " + getLength(line));
-//        System.out.println("value of input = " + calcInput(line, 'n'));
+//        System.out.println("value of input = " + calcInput(line, "is"));
 //        inverse(line);
 //        System.out.println("replace space on '*' = " + replaceSpace(line));
 //        System.out.println("change symbol = " + change(line, 'a', 'b'));
@@ -129,13 +129,13 @@ public class Main {
         return line.length();
     }
 
-    public static int calcInput(String line, char symbol){
+    public static int calcInput(String line, String substring){
 
-        char[] array = line.toCharArray();
+        String[] lineArray = line.split(" ");
         int count = 0;
 
-        for (char element: array){
-            if(element == symbol){
+        for (String word : lineArray){
+            if(word.equalsIgnoreCase(substring)){
                 count++;
             }
         }
