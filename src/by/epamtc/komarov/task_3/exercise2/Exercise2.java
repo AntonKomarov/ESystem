@@ -7,22 +7,27 @@ public class Exercise2 {
 
     public static void main(String[] args) {
 
-        int[] container = new int[]{2, 5, 79, 2, 83, 42, 6, 7, 87, 8, 93};
+        int[] array = new int[]{2, 5, 79, 2, 83, 42, 6, 7, 87, 8, 93};
 
-        System.out.println(createSequence(container));
-
+        print(toHalfArray(array));
     }
 
-    public static List createSequence(int[] array){
-        List<Integer> wholeSequence = new ArrayList<>();
+    public static List<Integer> toHalfArray(int[] array){
+        List<Integer> maxElement = new ArrayList<>();
 
         for (int i = 0; i < array.length-1; i+= 2) {
-            wholeSequence.add(Math.max(array[i], array[i+1]));
+            maxElement.add(Math.max(array[i], array[i+1]));
         }
         if (array.length % 2 != 0){
-            wholeSequence.add(array[array.length-1]);
+            maxElement.add(array[array.length-1]);
         }
 
-        return wholeSequence;
+        return maxElement;
+    }
+
+    public static void print(List<Integer> list){
+        for (Integer element : list) {
+            System.out.print(element + " ");
+        }
     }
 }
