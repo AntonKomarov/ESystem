@@ -19,7 +19,6 @@ public class Exercise1 {
         int sum;
 
         for (int i = 0; i < array.length / 2; i++) {
-
             sum = array[i] + array[array.length - i - 1];
 
             if (sum > maxSum) {
