@@ -9,7 +9,7 @@ public class Main {
 
         String line = "I have a cat Sonya. She is very nice and funny cat. She is 4 years old";
 
-//        System.out.println("even = " + getEvenSymbol(line));
+        System.out.println("even = " + getEvenSymbol(line));
 //        System.out.println("uneven = " + getUnEvenSymbol(line));
 //        System.out.println("calculation the same symbols = " + calcIteration(line));
 //        System.out.println("percent of lowercase and uppercase = " + percentLowerUppercase(line));
