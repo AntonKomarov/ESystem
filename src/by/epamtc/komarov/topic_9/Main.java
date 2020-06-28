@@ -24,7 +24,7 @@ public class Main {
 //        System.out.println("change symbol = " + change(line, 'a', 'b'));
 //        System.out.println("find shortest word = " + findShortWord(line));
 //        System.out.println("words = " + quantityWord(line));
-        System.out.println("change place for words = " + changePlace(line));
+//        System.out.println("change place for words = " + changePlace(line));
 //        System.out.println(findLong(line));
 //        System.out.println("add space = " + addSpace(line, 6));
 //
@@ -38,7 +38,7 @@ public class Main {
 //
 //        System.out.println("delete words by length = " + deleteByLength("delete = " + line, 3));
 //        System.out.println("delete Extra space = " + deleteExtraSpace(line));
-//        System.out.println("highlight words = " + Arrays.toString(highlightWords(line)));
+        System.out.println("highlight words = " + Arrays.toString(highlightWords(line)));
 
     }
 
@@ -234,12 +234,12 @@ public class Main {
     }
 
     public static long calc(String line){
+
         long sum = 0;
         String[] strArr = line.split("\\W");
-        long[] l = new long[strArr.length];
-        for (int i = 0; i < strArr.length; i++) {
-            l[i] = Long.parseLong(strArr[i]);
-            sum += l[i];
+
+        for(String element : strArr){
+            sum += Long.parseLong(element);
         }
 
         return sum;
@@ -261,9 +261,7 @@ public class Main {
     }
 
     public static String[] highlightWords(String line){
-        String s = deleteExtraSpace(line);
-        String[] strArray = s.split(" ");
-        return strArray;
+        return line.replaceAll("\\.", "").split("\\W");
     }
 
     public static String findLong(String line){
