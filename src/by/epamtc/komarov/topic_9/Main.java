@@ -9,7 +9,7 @@ public class Main {
 
         String line = "I have a cat Sonya. She is very nice and funny cat. She is 4 years old";
 
-        System.out.println("even = " + getEvenSymbol(line));
+//        System.out.println("even = " + getEvenSymbol(line));
 //        System.out.println("uneven = " + getUnEvenSymbol(line));
 //        System.out.println("calculation the same symbols = " + calcIteration(line));
 //        System.out.println("percent of lowercase and uppercase = " + percentLowerUppercase(line));
@@ -19,7 +19,7 @@ public class Main {
 //        System.out.println("copy = " + copySequence(line, 11, 12));
 //        System.out.println("length of line = " + getLength(line));
 //        System.out.println("value of input = " + calcInput(line, "is"));
-//        inverse(line);
+//        System.out.println("inverse: " + inverse(line));
 //        System.out.println("replace space on '*' = " + replaceSpace(line));
 //        System.out.println("change symbol = " + change(line, 'a', 'b'));
 //        System.out.println("find shortest word = " + findShortWord(line));
@@ -43,20 +43,20 @@ public class Main {
     }
 
     public static Map calcIteration(String line){
-              Map<Character, Integer> map = new HashMap<>();
+              Map<Character, Integer> element = new HashMap<>();
 
         for (int i = 0; i < line.length(); ++i) {
             char c = line.charAt(i);
 
             if (Character.isLetter(c)) {
-                if (map.containsKey(c)) {
-                    map.put(c, map.get(c) + 1);
+                if (element.containsKey(c)) {
+                    element.put(c, element.get(c) + 1);
                 } else {
-                    map.put(c, 1);
+                    element.put(c, 1);
                 }
             }
         }
-        return map;
+        return element;
     }
 
     public static StringBuilder getEvenSymbol(String line) {
@@ -96,17 +96,19 @@ public class Main {
 
         StringBuilder sb = new StringBuilder(line);
         int index;
+
         for (int i = 0; i < line.length(); i++) {
-            char c = line.charAt(i);
-            index = line.indexOf(c, i);
+            char symbol = line.charAt(i);
+            index = line.indexOf(symbol, i);
+
             if (index == -1){
-                sb.append(c);
+                sb.append(symbol);
             }
         }
         return sb;
     }
 
-    public static StringBuilder getUpheaval(String line){
+    public static StringBuilder getReverse(String line){
         StringBuilder sb = new StringBuilder(line);
         return sb.reverse();
     }
@@ -120,7 +122,7 @@ public class Main {
         return line.replaceAll(word, "");
     }
 
-    public static String copySequence(String line, int start, int end){
+    public static String copySubstring(String line, int start, int end){
         StringBuilder sb = new StringBuilder(line);
         return sb.substring(start, end+1);
     }
@@ -143,12 +145,15 @@ public class Main {
         return count;
     }
 
-    public static void inverse(String line){
+    public static StringBuilder inverse(String line){
+        StringBuilder sb = new StringBuilder();
         String[] strArr = line.split(" ");
-        System.out.print("inverse string = ");
+
         for (int i = strArr.length-1; i >=0 ; i--) {
-            System.out.print(strArr[i] + " ");
+            sb.append(strArr[i]).append(" ");
         }
+
+        return sb;
     }
 
     public static String replaceSpace(String line){

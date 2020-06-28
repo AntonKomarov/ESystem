@@ -7,9 +7,7 @@ public class MagicLock {
         int[] array = new int[]{6, 2, 3, 3, 4, 5, 6, 2, 3, 2};
         int sum = 0;
 
-        for (int element : array) {
-            System.out.print(element + " ");
-        }
+        print(array);
 
         for (int i = 0; i < array.length-2; i++) {
 
@@ -36,7 +34,13 @@ public class MagicLock {
             if (sum == 10) {
                 System.out.print(" the lock is open");
                 break;
-            } 
+            }
+        }
+    }
+
+    public static void print(int[] array){
+        for (int element : array) {
+            System.out.print(element + " ");
         }
     }
 }
