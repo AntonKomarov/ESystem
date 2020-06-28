@@ -24,7 +24,7 @@ public class Main {
 //        System.out.println("change symbol = " + change(line, 'a', 'b'));
 //        System.out.println("find shortest word = " + findShortWord(line));
 //        System.out.println("words = " + quantityWord(line));
-//        System.out.println("change place for words = " + Arrays.toString(changePlace(line)));
+        System.out.println("change place for words = " + changePlace(line));
 //        System.out.println(findLong(line));
 //        System.out.println("add space = " + addSpace(line, 6));
 //
@@ -42,7 +42,7 @@ public class Main {
 
     }
 
-    public static Map calcIteration(String line){
+    public static Map<Character, Integer> calcIteration(String line){
               Map<Character, Integer> element = new HashMap<>();
 
         for (int i = 0; i < line.length(); ++i) {
@@ -146,6 +146,7 @@ public class Main {
     }
 
     public static StringBuilder inverse(String line){
+
         StringBuilder sb = new StringBuilder();
         String[] strArr = line.split(" ");
 
@@ -161,8 +162,10 @@ public class Main {
     }
 
     public static String change(String line, char letter, char toLetter){
+
         String longestWord = findLong(line);
         char[] arr = longestWord.toCharArray();
+
         for (int i = 0; i < arr.length; i++) {
             if(arr[i] == letter){
                 arr[i] = toLetter;
@@ -193,15 +196,20 @@ public class Main {
         return count;
     }
 
-    public static String[] changePlace(String line){
-        String[] strArr = line.split(" ");
+    public static StringBuilder changePlace(String line){
+
+        String str = line.replaceAll("\\.", "");
+        String[] strArr = str.split(" ");
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < strArr.length-1; i+=2) {
-            String safe = strArr[i];
-            strArr[i] = strArr[i+1];
-            strArr[i+1] = safe;
+            sb.append(strArr[i+1]).append(" ").append(strArr[i]).append(" ");
         }
-        return strArr;
+
+        if (strArr.length % 2 != 0)
+        sb.append(strArr[strArr.length-1]);
+
+        return sb;
     }
 
     public static String removeLast(String line) {
@@ -213,11 +221,12 @@ public class Main {
         return sb.insert(index, " ");
     }
 
-    public static boolean palindrome(String line){
+    public static boolean isPalindrome(String line){
+
         String firstPart = line.replaceAll("\\W", "");
-        StringBuilder secondPart = new StringBuilder(line.replaceAll("\\W", ""));
-        secondPart.reverse();
-        return firstPart.equalsIgnoreCase(String.valueOf(secondPart));
+        String secondPart = String.valueOf(getReverse(firstPart));
+
+        return firstPart.equalsIgnoreCase(secondPart);
     }
 
     public static String exchangeSubstring(String line, String target, String replacement){
