@@ -15,7 +15,7 @@ public class Main {
         System.out.println("percent of lowercase and uppercase: " + percentLowerUppercase(line));
         System.out.println("upheaval: " + getReverse(line));
         System.out.println("insert substring: " +  insert(line, 5, "HHHH"));
-        System.out.println("remove substring: " + remove(line, "our"));
+        System.out.println("remove substring: " + remove(line, "is"));
         System.out.println("copy substring: " + copySubstring(line, 11, 12));
         System.out.println("length of line: " + getLength(line));
         System.out.println("value of input: " + calcInput(line, "is"));
@@ -180,17 +180,24 @@ public class Main {
         return String.valueOf(symbol);
     }
 
-    public static int findShortest(String line){
+    public static String findShortest(String line){
 
+        StringBuilder sb = new StringBuilder();
         String[] strArr = toStringArray(line);
         String shortestWord = strArr[0];
 
-        for (String word:strArr){
+        for (String word : strArr){
             if(word.length() < shortestWord.length()){
                 shortestWord = word;
             }
         }
-        return getLength(shortestWord);
+
+        for (String word : strArr){
+            if(shortestWord.length() == word.length()){
+                sb.append(word).append(" ");
+            }
+        }
+        return String.valueOf(sb);
     }
 
     public static int quantityWord(String line){
@@ -274,6 +281,7 @@ public class Main {
 
     public static String findLongest(String line){
 
+        StringBuilder sb = new StringBuilder();
         String[] strArr = toStringArray(line);
         String longestWord = "";
 
@@ -282,7 +290,13 @@ public class Main {
                 longestWord = word;
             }
         }
-        return longestWord;
+
+        for (String word : strArr){
+            if(longestWord.length() == word.length()){
+                sb.append(word).append(" ");
+            }
+        }
+        return String.valueOf(sb);
     }
 
     public static String[] toStringArray(String line){
