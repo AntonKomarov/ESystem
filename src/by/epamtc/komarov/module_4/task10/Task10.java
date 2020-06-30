@@ -15,6 +15,7 @@ public class Task10 {
         Scanner scanner = new Scanner(System.in);
 
         while (scanner.hasNext()) {
+
             middleNumber = rightNumber;
             rightNumber = scanner.nextInt();
 
@@ -40,6 +41,7 @@ public class Task10 {
     }
 
     public static String getMarkSequence(boolean flagCharacter){
+
         if(flagCharacter)
             return "хаотичные знаки";
         else
@@ -47,6 +49,7 @@ public class Task10 {
     }
 
     public static String getSequence(boolean flagSeqNum){
+
         if(flagSeqNum)
             return "не возрастающая";
         else

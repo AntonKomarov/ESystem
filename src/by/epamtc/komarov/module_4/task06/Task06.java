@@ -3,6 +3,7 @@ package by.epamtc.komarov.module_4.task06;
 public class Task06 {
 
     public static void main(String[] args) {
+
         System.out.println("int = " + getMaxIntBeforeOverflow(2,3));
         System.out.println("long = " + getMaxLongBeforeOverflow(2,3));
     }

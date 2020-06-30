@@ -28,7 +28,7 @@ public class Main {
         System.out.println("add space: " + addSpace(line, 6));
         System.out.println("change substring: " + exchangeSubstring(line, "is", "are"));
         System.out.println("delete words by length: " + deleteByLength(line, 3));
-        System.out.println("highlight words: " + Arrays.toString(highlightWords(line)));
+        System.out.println("highlight words: " + Arrays.toString(highlightWord(line)));
         System.out.println("delete iteration: " + deleteIteration(line));
         System.out.println("remove last word: " + removeLast(line));
 
@@ -275,7 +275,7 @@ public class Main {
         return line.trim().replaceAll(" {2,}", " ");
     }
 
-    public static String[] highlightWords(String line){
+    public static String[] highlightWord(String line){
         return line.replaceAll("\\.", "").split("\\W");
     }
 

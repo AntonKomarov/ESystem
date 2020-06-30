@@ -13,6 +13,7 @@ public class Task09 {
         long preValue = 0;
 
         for (int i = from; i <= toValue; i++) {
+
             preValue += i;
             mult *= preValue; //10
         }
