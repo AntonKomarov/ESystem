@@ -38,7 +38,7 @@ public class Main {
 //
 //        System.out.println("delete words by length = " + deleteByLength("delete = " + line, 3));
 //        System.out.println("delete Extra space = " + deleteExtraSpace(line));
-        System.out.println("highlight words = " + Arrays.toString(highlightWords(line)));
+//        System.out.println("highlight words = " + Arrays.toString(highlightWords(line)));
 
     }
 
@@ -109,13 +109,11 @@ public class Main {
     }
 
     public static StringBuilder getReverse(String line){
-        StringBuilder sb = new StringBuilder(line);
-        return sb.reverse();
+        return new StringBuilder(line).reverse();
     }
 
     public static StringBuilder insert(String line, int index, String word){
-        StringBuilder sb = new StringBuilder(line);
-        return sb.insert(index, word);
+        return new StringBuilder(line).insert(index, word);
     }
 
     public static String remove(String line, String word){
@@ -123,7 +121,9 @@ public class Main {
     }
 
     public static String copySubstring(String line, int start, int end){
+
         StringBuilder sb = new StringBuilder(line);
+
         return sb.substring(start, end+1);
     }
 
@@ -175,6 +175,7 @@ public class Main {
     }
 
     public static int findShortWord(String line){
+
         String[] strArr = line.split(" ");
         String shortestWord = strArr[0];
 
@@ -187,8 +188,10 @@ public class Main {
     }
 
     public static int quantityWord(String line){
+
         String str = replaceSpace(line);
         String[] strArr = str.split(" ");
+
         int count = 0;
         for (String word: strArr)
             count++;
@@ -217,7 +220,9 @@ public class Main {
     }
 
     public static StringBuilder addSpace(String line, int index){
+
         StringBuilder sb = new StringBuilder(line);
+
         return sb.insert(index, " ");
     }
 
@@ -246,11 +251,13 @@ public class Main {
     }
 
     public static StringBuilder deleteByLength(String line, int length){
+
         StringBuilder sb = new StringBuilder();
         String[] strArr = line.split(" ");
-        for (int i = 0; i < strArr.length; i++) {
-            if (!(strArr[i].length() == length)){
-                sb.append(strArr[i]).append(" ");
+
+        for (String word : strArr) {
+            if (!(word.length() == length)) {
+                sb.append(word).append(" ");
             }
         }
         return sb;
@@ -265,20 +272,15 @@ public class Main {
     }
 
     public static String findLong(String line){
-        String[] strArr = line.split(" ");
-        String empty = "";
 
-        for (String word: strArr){
-            if(word.length() > empty.length()){
-                empty = word;
+        String[] strArr = line.split(" ");
+        String longestWord = "";
+
+        for (String word : strArr){
+            if(word.length() > longestWord.length()){
+                longestWord = word;
             }
         }
-        return empty;
+        return longestWord;
     }
-
-
-
-
-
-
 }
