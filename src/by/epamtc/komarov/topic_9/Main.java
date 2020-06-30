@@ -7,41 +7,43 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        String line = "I have a cat Sonya. She is      very nice and funny cat. She is 4 years old";
+        String line = "I have a cat Sonya. She is very nice and funny cat. She is 4 years old";
 
-        System.out.println("even = " + getEvenSymbol(line));
-        System.out.println("uneven = " + getUnEvenSymbol(line));
-        System.out.println("calculation the same symbols = " + calcIteration(line));
-        System.out.println("percent of lowercase and uppercase = " + percentLowerUppercase(line));
-        System.out.println("upheaval = " + getReverse(line));
-        System.out.println("substring = " +  insert(line, 5, "HHHH"));
-        System.out.println("remove substring = " + remove(line, "our"));
-        System.out.println("copy = " + copySubstring(line, 11, 12));
-        System.out.println("length of line = " + getLength(line));
-        System.out.println("value of input = " + calcInput(line, "is"));
+        System.out.println("even: " + getEvenSymbol(line));
+        System.out.println("uneven: " + getUnEvenSymbol(line));
+        System.out.println("calculation the same symbols: " + calcIteration(line));
+        System.out.println("percent of lowercase and uppercase: " + percentLowerUppercase(line));
+        System.out.println("upheaval: " + getReverse(line));
+        System.out.println("substring: " +  insert(line, 5, "HHHH"));
+        System.out.println("remove substring: " + remove(line, "our"));
+        System.out.println("copy: " + copySubstring(line, 11, 12));
+        System.out.println("length of line: " + getLength(line));
+        System.out.println("value of input: " + calcInput(line, "is"));
         System.out.println("inverse: " + inverse(line));
-        System.out.println("replace space on '*' = " + replaceSpace(line));
-        System.out.println("change symbol = " + change(line, 'a', 'b'));
-        System.out.println("find shortest word = " + findShortest(line));
-        System.out.println("words = " + quantityWord(line));
-        System.out.println("change place for words = " + changePlace(line));
-        System.out.println(findLongest(line));
-        System.out.println("add space = " + addSpace(line, 6));
-
-        String palindrome = "А луна канула";
-        System.out.println(isPalindrome(palindrome));
-
-        System.out.println("change substring = " + exchangeSubstring(line, "is", "are"));
-
-        String number = "31212434123123+5132412351315215";
-        System.out.println("sum = " + calc(number));
-
-        System.out.println("delete words by length = " + deleteByLength(line, 3));
-        System.out.println("delete Extra space = " + deleteExtraSpace(line));
-        System.out.println("highlight words = " + Arrays.toString(highlightWords(line)));
-        System.out.println("delete iteration = " + deleteIteration(line));
+        System.out.println("change symbol: " + change(line, 'a', 'b'));
+        System.out.println("find shortest word: " + findShortest(line));
+        System.out.println("words: " + quantityWord(line));
+        System.out.println("change place for words: " + changePlace(line));
+        System.out.println("longest word: " + findLongest(line));
+        System.out.println("add space: " + addSpace(line, 6));
+        System.out.println("change substring: " + exchangeSubstring(line, "is", "are"));
+        System.out.println("delete words by length: " + deleteByLength(line, 3));
+        System.out.println("highlight words: " + Arrays.toString(highlightWords(line)));
+        System.out.println("delete iteration: " + deleteIteration(line));
         System.out.println("remove last word: " + removeLast(line));
 
+        System.out.println();
+        String lineWithExtraSpace = "   Hello     World   !  ";
+        System.out.println("delete Extra space: " + deleteExtraSpace(lineWithExtraSpace));
+        System.out.println("replace space on '*': " + exchangeSpace(lineWithExtraSpace));
+
+        System.out.println();
+        String palindrome = "А луна канула";
+        System.out.println(palindrome + "\nis palindrome: " + isPalindrome(palindrome));
+
+        System.out.println();
+        String number = "31212434123123+5132412351315215";
+        System.out.println(number + "\nsum: " + calc(number));
     }
 
     public static Map<Character, Integer> calcIteration(String line){
@@ -160,8 +162,8 @@ public class Main {
         return sb;
     }
 
-    public static String replaceSpace(String line){
-        return line.replaceAll(" {2,}", "*");
+    public static String exchangeSpace(String line){
+        return deleteExtraSpace(line).replaceAll(" ", "*");
     }
 
     public static String change(String line, char letter, char toLetter){
@@ -263,7 +265,7 @@ public class Main {
     }
 
     public static String deleteExtraSpace(String line){
-        return line.replaceAll(" {2,}", " ");
+        return line.trim().replaceAll(" {2,}", " ");
     }
 
     public static String[] highlightWords(String line){
