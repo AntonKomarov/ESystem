@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main {
+public class Topic9 {
     public static void main(String[] args) {
 
         String line = "I have a cat Sonya. She is very nice and funny cat. She is 4 years old";
