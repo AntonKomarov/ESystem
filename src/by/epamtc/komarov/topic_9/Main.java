@@ -14,9 +14,9 @@ public class Main {
         System.out.println("calculation the same symbols: " + calcIteration(line));
         System.out.println("percent of lowercase and uppercase: " + percentLowerUppercase(line));
         System.out.println("upheaval: " + getReverse(line));
-        System.out.println("substring: " +  insert(line, 5, "HHHH"));
+        System.out.println("insert substring: " +  insert(line, 5, "HHHH"));
         System.out.println("remove substring: " + remove(line, "our"));
-        System.out.println("copy: " + copySubstring(line, 11, 12));
+        System.out.println("copy substring: " + copySubstring(line, 11, 12));
         System.out.println("length of line: " + getLength(line));
         System.out.println("value of input: " + calcInput(line, "is"));
         System.out.println("inverse: " + inverse(line));
@@ -97,7 +97,7 @@ public class Main {
         int lowercasePercent = (lowercase.length() * 100) / hundredPercent;
         int uppercasePercent = (uppercase.length() * 100) / hundredPercent;
 
-        return "Uppercase: " + uppercasePercent + "%" + "\n" + "Lowercase: " + lowercasePercent + "%";
+        return "\nUppercase: " + uppercasePercent + "%\nLowercase: " + lowercasePercent + "%";
     }
 
     public static StringBuilder deleteIteration(String line){
