@@ -1,6 +1,5 @@
 package by.epamtc.komarov.topic_9;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -121,10 +120,7 @@ public class Main {
     }
 
     public static String copySubstring(String line, int start, int end){
-
-        StringBuilder sb = new StringBuilder(line);
-
-        return sb.substring(start, end+1);
+                return new StringBuilder().substring(start, end+1);
     }
 
     public static int getLength(String line) {
@@ -163,15 +159,15 @@ public class Main {
 
     public static String change(String line, char letter, char toLetter){
 
-        String longestWord = findLong(line);
-        char[] arr = longestWord.toCharArray();
+        String longestWord = findLongest(line);
+        char[] symbol = longestWord.toCharArray();
 
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] == letter){
-                arr[i] = toLetter;
+        for (int i = 0; i < symbol.length; i++) {
+            if(symbol[i] == letter){
+                symbol[i] = toLetter;
             }
         }
-        return String.valueOf(arr);
+        return String.valueOf(symbol);
     }
 
     public static int findShortWord(String line){
@@ -220,18 +216,15 @@ public class Main {
     }
 
     public static StringBuilder addSpace(String line, int index){
-
-        StringBuilder sb = new StringBuilder(line);
-
-        return sb.insert(index, " ");
+        return new StringBuilder().insert(index, " ");
     }
 
     public static boolean isPalindrome(String line){
 
-        String firstPart = line.replaceAll("\\W", "");
-        String secondPart = String.valueOf(getReverse(firstPart));
+        String first = line.replaceAll("\\W", "");
+        String reverseFirst = String.valueOf(getReverse(first));
 
-        return firstPart.equalsIgnoreCase(secondPart);
+        return first.equalsIgnoreCase(reverseFirst);
     }
 
     public static String exchangeSubstring(String line, String target, String replacement){
@@ -271,7 +264,7 @@ public class Main {
         return line.replaceAll("\\.", "").split("\\W");
     }
 
-    public static String findLong(String line){
+    public static String findLongest(String line){
 
         String[] strArr = line.split(" ");
         String longestWord = "";
