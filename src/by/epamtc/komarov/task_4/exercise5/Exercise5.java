@@ -7,6 +7,7 @@ public class Exercise5 {
     public static void main(String[] args) {
 
         int size = 3;
+
         int[][] firstMatrix = new int[][]
                 {
                         {1,2},
