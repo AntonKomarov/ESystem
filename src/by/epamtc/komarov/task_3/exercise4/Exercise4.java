@@ -17,11 +17,11 @@ public class Exercise4 {
 
         Map<Integer, Integer> number = new HashMap<>();
 
-        for (int i = 0; i < array.length; i++) {
-            if (!number.containsKey(array[i])) {
-                number.put(array[i], 1);
+        for (int element : array) {
+            if (!number.containsKey(element)) {
+                number.put(element, 1);
             } else {
-                number.put(array[i], number.get(array[i]) + 1);
+                number.put(element, number.get(element) + 1);
             }
         }
         return number;
@@ -39,7 +39,7 @@ public class Exercise4 {
 
         for (Map.Entry<Integer, Integer> element : hashMap.entrySet()) {
             if (element.getValue() == maxValue) {
-                return minKey = element.getKey();
+                minKey = element.getKey();
             }
         }
         return minKey;

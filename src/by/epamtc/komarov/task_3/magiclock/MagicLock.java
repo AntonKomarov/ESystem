@@ -5,7 +5,7 @@ public class MagicLock {
     public static void main(String[] args) {
 
         int[] array = new int[]{6, 2, 3, 3, 4, 5, 6, 2, 3, 2};
-        int sum = 0;
+        int sum;
 
         print(array);
 
