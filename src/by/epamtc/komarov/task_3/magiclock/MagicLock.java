@@ -39,6 +39,7 @@ public class MagicLock {
     }
 
     public static void print(int[] array){
+
         for (int element : array) {
             System.out.print(element + " ");
         }

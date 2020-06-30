@@ -14,6 +14,7 @@ public class Exercise4 {
     }
 
     public static Map<Integer, Integer> calcSameKey(int[] array) {
+
         Map<Integer, Integer> number = new HashMap<>();
 
         for (int i = 0; i < array.length; i++) {
@@ -27,6 +28,7 @@ public class Exercise4 {
     }
 
     public static int findMinKeyMaxValue(Map<Integer, Integer> hashMap) {
+
         int maxValue = 0;
         int minKey = 0;
 

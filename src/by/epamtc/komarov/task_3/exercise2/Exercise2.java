@@ -13,6 +13,7 @@ public class Exercise2 {
     }
 
     public static List<Integer> toHalfArray(int[] array){
+
         List<Integer> maxElement = new ArrayList<>();
 
         for (int i = 0; i < array.length-1; i+= 2) {
@@ -26,6 +27,7 @@ public class Exercise2 {
     }
 
     public static void print(List<Integer> list){
+
         for (Integer element : list) {
             System.out.print(element + " ");
         }
