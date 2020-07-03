@@ -1,4 +1,4 @@
-package by.epamtc.komarov.task_3.exercise1;
+package by.epamtc.komarov.array.exercise1;
 
 public class Exercise1 {
 

@@ -1,4 +1,4 @@
-package by.epamtc.komarov.task_4.printMatrix;
+package by.epamtc.komarov.matrix.printMatrix;
 
 public class PrintMatrix {
 

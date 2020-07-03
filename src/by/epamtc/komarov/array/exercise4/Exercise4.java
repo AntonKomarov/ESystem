@@ -1,4 +1,4 @@
-package by.epamtc.komarov.task_3.exercise4;
+package by.epamtc.komarov.array.exercise4;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package by.epamtc.komarov.task_4.exercise5;
+package by.epamtc.komarov.matrix.exercise5;
 
-import by.epamtc.komarov.task_4.printMatrix.PrintMatrix;
+import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
 
 public class Exercise5 {
 

@@ -1,4 +1,4 @@
-package by.epamtc.komarov.task_3.magiclock;
+package by.epamtc.komarov.array.magiclock;
 
 public class MagicLock {
 

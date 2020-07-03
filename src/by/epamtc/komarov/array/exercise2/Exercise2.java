@@ -1,4 +1,4 @@
-package by.epamtc.komarov.task_3.exercise2;
+package by.epamtc.komarov.array.exercise2;
 
 import java.util.ArrayList;
 import java.util.List;

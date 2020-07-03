@@ -1,4 +1,4 @@
-package by.epamtc.komarov.task_3.exercise5;
+package by.epamtc.komarov.array.exercise5;
 
 public class Exercise5 {
     public static void main(String[] args) {

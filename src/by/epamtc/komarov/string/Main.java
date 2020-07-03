@@ -1,23 +1,23 @@
-package by.epamtc.komarov.topic_9;
+package by.epamtc.komarov.string;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Topic9 {
+public class Main {
     public static void main(String[] args) {
 
         String line = "I have a cat Sonya. She is very nice and funny cat. She is 4 years old";
 
-        System.out.println("even: " + getEvenSymbol(line));
-        System.out.println("uneven: " + getUnEvenSymbol(line));
+        System.out.println("even: " + evenSymbol(line));
+        System.out.println("uneven: " + unevenSymbol(line));
         System.out.println("calculation the same symbols: " + calcIteration(line));
         System.out.println("percent of lowercase and uppercase: " + percentLowerUppercase(line));
-        System.out.println("upheaval: " + getReverse(line));
+        System.out.println("upheaval: " + reverse(line));
         System.out.println("insert substring: " +  insert(line, 5, "HHHH"));
         System.out.println("remove substring: " + remove(line, "is"));
         System.out.println("copy substring: " + copySubstring(line, 11, 12));
-        System.out.println("length of line: " + getLength(line));
+        System.out.println("length of line: " + length(line));
         System.out.println("value of input: " + calcInput(line, "is"));
         System.out.println("inverse: " + inverse(line));
         System.out.println("change symbol: " + change(line, 'a', 'b'));
@@ -65,7 +65,7 @@ public class Topic9 {
         return element;
     }
 
-    public static StringBuilder getEvenSymbol(String line) {
+    public static StringBuilder evenSymbol(String line) {
 
         StringBuilder sb = new StringBuilder();
 
@@ -76,7 +76,7 @@ public class Topic9 {
         return sb;
     }
 
-    public static StringBuilder getUnEvenSymbol(String line) {
+    public static StringBuilder unevenSymbol(String line) {
 
         StringBuilder sb = new StringBuilder();
 
@@ -116,7 +116,7 @@ public class Topic9 {
         return sb;
     }
 
-    public static StringBuilder getReverse(String line){
+    public static StringBuilder reverse(String line){
         return new StringBuilder(line).reverse();
     }
 
@@ -132,7 +132,7 @@ public class Topic9 {
                 return new StringBuilder(line).substring(start, end+1);
     }
 
-    public static int getLength(String line) {
+    public static int length(String line) {
         return line.length();
     }
 
@@ -237,7 +237,7 @@ public class Topic9 {
     public static boolean isPalindrome(String line){
 
         String first = line.replaceAll("\\W", "");
-        String reverseFirst = String.valueOf(getReverse(first));
+        String reverseFirst = String.valueOf(reverse(first));
 
         return first.equalsIgnoreCase(reverseFirst);
     }
