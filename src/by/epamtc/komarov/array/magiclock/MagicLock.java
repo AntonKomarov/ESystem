@@ -4,39 +4,45 @@ public class MagicLock {
 
     public static void main(String[] args) {
 
-        int[] array = new int[]{6, 2, 3, 3, 4, 5, 6, 2, 3, 2};
-        int sum;
+        int[] array = new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1} ;
+        int sum = 0;
+        int first = 0;
+        int third = 0;
+        int index = 0;
+        int addElement = 0;
+
+
+        for (int i = 0; i < 2; i++) {
+            index = (int) (Math.random() * 9);
+            int element = array[index] = 1 + (int) (Math.random() * 6);
+            sum += element;
+            first = element;
+
+        }
+
+        third = sum - first;
+        addElement = 10 - sum;
+
+        System.out.println("add: " + addElement);
+        System.out.println("first: " + first);
+        System.out.println("third: " + third);
+        System.out.println("index: " + index);
 
         print(array);
 
-        for (int i = 0; i < array.length-2; i++) {
 
-            sum = array[i] + array[i + 1] + array[i + 2];
+        for (int i = 0; i < array.length; i++) {
+            if (i < (array.length / 2)) {
+                sum = array[i] + array[i + 1] + array[i + 2];
 
-            if (sum < 10) {
 
-                do {
-
-                    if (array[i] < 6) {
-                        array[i] += 1;
-                    } else if (array[i + 1] < 6) {
-                        array[i + 1] += 1;
-                    } else if (array[i + 2] < 6) {
-                        array[i + 2] += 1;
-                    }
-
-                    sum += 1;
-
-                    System.out.print("\n" + array[i] + " " + array[i + 1] + " " + array[i + 2] + " sum = " + sum);
-
-                } while (sum != 10);
-            }
-            if (sum == 10) {
-                System.out.print(" the lock is open");
-                break;
+            } else {
+                sum = array[i] + array[i - 1] + array[i - 2];
             }
         }
+
     }
+
 
     public static void print(int[] array){
 
@@ -45,3 +51,5 @@ public class MagicLock {
         }
     }
 }
+
+

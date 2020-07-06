@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task09;
 
-public class Task09 {
+public class TaskNine {
 
     public static void main(String[] args) {
         System.out.println(calcMultOfFactorialSum(1, 10));

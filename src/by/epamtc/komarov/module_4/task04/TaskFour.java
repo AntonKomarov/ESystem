@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task04;
 
-public class Task04 {
+public class TaskFour {
 
     public static void main(String[] args) {
         System.out.println(calcFunction(15));

@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task05;
 
-public class Task05 {
+public class TaskFive {
 
     public static void main(String[] args) {
 

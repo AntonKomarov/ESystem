@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task01;
 
-public class Task01 {
+public class TaskOne {
 
     public static void main(String[] args) {
         System.out.println(calcTheValueOfEquation(4,5,6));

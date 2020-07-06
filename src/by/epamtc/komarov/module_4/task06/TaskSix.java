@@ -1,14 +1,14 @@
 package by.epamtc.komarov.module_4.task06;
 
-public class Task06 {
+public class TaskSix {
 
     public static void main(String[] args) {
 
-        System.out.println("int = " + getMaxIntBeforeOverflow(2,3));
-        System.out.println("long = " + getMaxLongBeforeOverflow(2,3));
+        System.out.println("int = " + maxIntBeforeOverflow(2,3));
+        System.out.println("long = " + maxLongBeforeOverflow(2,3));
     }
 
-    public static int getMaxIntBeforeOverflow(int firstMemberProgression, int difference){
+    public static int maxIntBeforeOverflow(int firstMemberProgression, int difference){
 
         int memberArithmeticProgression;
         int arithmeticProgression;
@@ -27,7 +27,7 @@ public class Task06 {
         return memberArithmeticProgression;
     }
 
-    public static long getMaxLongBeforeOverflow(int firstMemberProgression, int difference){
+    public static long maxLongBeforeOverflow(int firstMemberProgression, int difference){
 
         long memberArithmeticProgression;
         long arithmeticProgression;

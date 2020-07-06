@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task07;
 
-public class Task07 {
+public class TaskSeven {
 
     public static void main(String[] args) {
         System.out.println(changeWholeWithFraction(345.674));

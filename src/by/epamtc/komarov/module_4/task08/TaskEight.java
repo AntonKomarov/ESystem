@@ -1,6 +1,6 @@
 package by.epamtc.komarov.module_4.task08;
 
-public class Task08 {
+public class TaskEight {
 
     public static void main(String[] args) {
         System.out.println(getFunctionResultOnTheSegment(5, 40, 3, 7));
