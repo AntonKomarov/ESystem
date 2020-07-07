@@ -6,7 +6,7 @@ public class ExerciseThree {
 
     public static void main(String[] args) {
 
-        int size = 8;
+        int size = 9;
         int[][] matrix = new int[size][size];
 
         for (int i = 0; i < matrix.length; i++) {
@@ -15,6 +15,13 @@ public class ExerciseThree {
             }
         }
 
+        fullLeftSide(matrix);
+        fullRightSide(matrix);
+
+        PrintMatrix.print(matrix);
+    }
+
+    public static int[][] fullLeftSide(int[][] matrix) {
         int index = 1;
 
         for (int i = 1; i < matrix.length - 1; i++) {
@@ -23,34 +30,31 @@ public class ExerciseThree {
                 matrix[i][j] = 0;
             }
 
-            if (i < matrix.length/2){
+            if (i < matrix.length / 2) {
                 ++index;
-            }
-            else {
+            } else {
                 --index;
             }
+
         }
-        PrintMatrix.print(matrix);
+        return matrix;
+    }
 
-        System.out.println();
-
+    public static int[][] fullRightSide(int[][] matrix) {
         int indexSecond = matrix.length - 1;
 
-        for (int i = matrix.length - 1; i >= 1; i--) {
-            for (int j = matrix.length - 1; j >= indexSecond; j--) {
+        for (int i = matrix.length - 2; i >= 1; i--) {
+            for (int j = matrix.length - 1; j >= indexSecond ; j--) {
 
                 matrix[i][j] = 0;
             }
 
-            if (i > matrix.length / 2){
+            if (i > matrix.length / 2) {
                 --indexSecond;
-            }
-            else {
+            } else {
                 ++indexSecond;
             }
         }
-
-        PrintMatrix.print(matrix);
-
+        return matrix;
     }
 }
