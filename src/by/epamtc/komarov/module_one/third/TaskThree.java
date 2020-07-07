@@ -1,4 +1,4 @@
-package by.epamtc.komarov.module_4.task03;
+package by.epamtc.komarov.module_one.third;
 
 public class TaskThree {
 

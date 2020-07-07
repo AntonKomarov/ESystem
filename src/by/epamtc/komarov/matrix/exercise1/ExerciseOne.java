@@ -2,19 +2,19 @@ package by.epamtc.komarov.matrix.exercise1;
 
 import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
 
-public class Exercise1 {
+public class ExerciseOne {
     public static void main(String[] args) {
 
         int size = 10;
         int[][] matrix = new int[size][size];
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+        for (int line = 0; line < matrix.length; line++) {
+            for (int column = 0; column < matrix.length; column++) {
 
-                matrix[i][j] = j+1;
+                matrix[line][column] = column + 1;
 
-                if(i % 2 != 0){
-                    matrix[i][j] = size - j;
+                if(line % 2 != 0){
+                    matrix[line][column] = size - column;
                 }
             }
         }

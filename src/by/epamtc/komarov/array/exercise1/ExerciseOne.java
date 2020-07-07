@@ -1,6 +1,6 @@
 package by.epamtc.komarov.array.exercise1;
 
-public class Exercise1 {
+public class ExerciseOne {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package by.epamtc.komarov.matrix.exercise2;
 
 import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
 
-public class Exercise2 {
+public class ExerciseTwo {
     public static void main(String[] args) {
 
         int size = 10;

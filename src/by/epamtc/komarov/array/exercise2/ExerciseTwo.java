@@ -3,7 +3,7 @@ package by.epamtc.komarov.array.exercise2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Exercise2 {
+public class ExerciseTwo {
 
     public static void main(String[] args) {
 

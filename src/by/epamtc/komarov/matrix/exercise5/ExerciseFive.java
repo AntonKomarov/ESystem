@@ -2,7 +2,7 @@ package by.epamtc.komarov.matrix.exercise5;
 
 import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
 
-public class Exercise5 {
+public class ExerciseFive {
 
     public static void main(String[] args) {
 

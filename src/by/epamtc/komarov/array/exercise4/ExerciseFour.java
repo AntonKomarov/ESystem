@@ -3,7 +3,7 @@ package by.epamtc.komarov.array.exercise4;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Exercise4 {
+public class ExerciseFour {
     public static void main(String[] args) {
 
         int[] array = new int[]{2, 31, 4, 1, 23, 1, 12, 5, 44, 23, 5, 31, 31, 76, 23};

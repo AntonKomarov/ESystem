@@ -1,6 +1,6 @@
 package by.epamtc.komarov.array.exercise5;
 
-public class Exercise5 {
+public class ExerciseFive {
     public static void main(String[] args) {
 
         int[] array = new int[]{4,6,4,2,34,5,23,2,352,12,6,7,6,3,453,6,34};

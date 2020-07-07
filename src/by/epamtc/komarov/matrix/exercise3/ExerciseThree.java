@@ -1,19 +1,21 @@
-package by.epamtc.komarov.matrix.exercise4;
+package by.epamtc.komarov.matrix.exercise3;
 
 import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
 
-public class Exercise4 {
+public class ExerciseThree {
     public static void main(String[] args) {
 
-        int size = 6;
+        int size = 5;
         int[][] matrix = new int[size][size];
 
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
+            for (int j = 1; j <= matrix.length; j++) {
 
-                matrix[i][j] = (int) Math.pow(j+1,i+1);
+                if(i == j)
+                matrix[i][j] = 1;
             }
         }
+
         PrintMatrix.print(matrix);
     }
 }
