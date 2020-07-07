@@ -1,6 +1,6 @@
-package by.epamtc.komarov.matrix.exercise6;
+package by.epamtc.komarov.matrix.magic_square;
 
-import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
+import by.epamtc.komarov.matrix.print.PrintMatrix;
 
 public class MagicSquare {
     public static void main(String[] args) {

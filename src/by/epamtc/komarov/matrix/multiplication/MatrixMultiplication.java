@@ -1,8 +1,8 @@
-package by.epamtc.komarov.matrix.exercise5;
+package by.epamtc.komarov.matrix.multiplication;
 
-import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
+import by.epamtc.komarov.matrix.print.PrintMatrix;
 
-public class ExerciseFive {
+public class MatrixMultiplication {
 
     public static void main(String[] args) {
 
@@ -22,7 +22,6 @@ public class ExerciseFive {
 
         int[][] resultMatrix = new int[size][size];
 
-        // время выпонения О(n^3)
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 for (int k = 0; k < 2; k++) {
@@ -31,8 +30,6 @@ public class ExerciseFive {
                 }
             }
         }
-
         PrintMatrix.print(resultMatrix);
-
     }
 }

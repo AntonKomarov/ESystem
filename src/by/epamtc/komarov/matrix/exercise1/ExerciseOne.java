@@ -1,20 +1,21 @@
 package by.epamtc.komarov.matrix.exercise1;
 
-import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
+import by.epamtc.komarov.matrix.print.PrintMatrix;
 
 public class ExerciseOne {
+
     public static void main(String[] args) {
 
         int size = 10;
         int[][] matrix = new int[size][size];
 
-        for (int line = 0; line < matrix.length; line++) {
-            for (int column = 0; column < matrix.length; column++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
 
-                matrix[line][column] = column + 1;
+                matrix[i][j] = j + 1;
 
-                if(line % 2 != 0){
-                    matrix[line][column] = size - column;
+                if(i % 2 != 0){
+                    matrix[i][j] = size - j;
                 }
             }
         }

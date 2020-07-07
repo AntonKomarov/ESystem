@@ -1,6 +1,6 @@
 package by.epamtc.komarov.matrix.exercise2;
 
-import by.epamtc.komarov.matrix.printMatrix.PrintMatrix;
+import by.epamtc.komarov.matrix.print.PrintMatrix;
 
 public class ExerciseTwo {
     public static void main(String[] args) {
