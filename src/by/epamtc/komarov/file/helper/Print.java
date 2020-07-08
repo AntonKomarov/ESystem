@@ -10,13 +10,12 @@ public class Print {
 
         for (String element : array) {
 
+            String compactWord = characteristic.replaceAll(onlySymbol, "");
             String compactLine = element.replaceAll(onlySymbol, "");
-            String compactWordToLowerCase = characteristic.replaceAll(onlySymbol, "").toLowerCase();
-            String compactWordToUpperCase = characteristic.replaceAll(onlySymbol, "").toUpperCase();
 
             if (compactLine.contains(technic.getName())
-                    && (compactLine.contains(compactWordToLowerCase)
-                    || compactLine.contains(compactWordToUpperCase))) {
+                    && (compactLine.contains(compactWord.toLowerCase())
+                    || compactLine.contains(compactWord.toUpperCase()))) {
 
                 System.out.println(element);
             }
