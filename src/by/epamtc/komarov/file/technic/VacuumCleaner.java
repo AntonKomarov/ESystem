@@ -1,4 +1,4 @@
-package by.epamtc.komarov.file;
+package by.epamtc.komarov.file.technic;
 
 public class VacuumCleaner extends Technic {
 

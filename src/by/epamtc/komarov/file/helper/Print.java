@@ -1,6 +1,6 @@
 package by.epamtc.komarov.file.helper;
 
-import by.epamtc.komarov.file.Technic;
+import by.epamtc.komarov.file.technic.Technic;
 
 public class Print {
 
@@ -11,9 +11,13 @@ public class Print {
         for (String element : array) {
 
             String compactLine = element.replaceAll(onlySymbol, "");
-            String compactWord = characteristic.replaceAll(onlySymbol, "").toUpperCase();
+            String compactWordToLowerCase = characteristic.replaceAll(onlySymbol, "").toLowerCase();
+            String compactWordToUpperCase = characteristic.replaceAll(onlySymbol, "").toUpperCase();
 
-            if (compactLine.contains(technic.getName()) && compactLine.contains(compactWord)) {
+            if (compactLine.contains(technic.getName())
+                    && (compactLine.contains(compactWordToLowerCase)
+                    || compactLine.contains(compactWordToUpperCase))) {
+
                 System.out.println(element);
             }
         }

@@ -2,6 +2,7 @@ package by.epamtc.komarov.file;
 
 import by.epamtc.komarov.file.helper.Print;
 import by.epamtc.komarov.file.helper.ReadFile;
+import by.epamtc.komarov.file.technic.*;
 
 public class Runner {
 
@@ -12,7 +13,7 @@ public class Runner {
         Print.printGood(good, new Oven(), "height 40");
         Print.printGood(good, new Laptop(), "memory rom 8000");
         Print.printGood(good, new Speakers(), "FREQUENCY RANGE = 2-4");
-        Print.printGood(good, new TabletPC(), "color");
+        Print.printGood(good, new TabletPC(), "Red");
         Print.printGood(good, new Refrigerator(), "WEIGHT 30");
         Print.printGood(good, new VacuumCleaner(), "motor SPEED-REGuLATION=2900");
 
