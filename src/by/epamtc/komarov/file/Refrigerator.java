@@ -1,4 +1,4 @@
-package by.epamtc.komarov.collection;
+package by.epamtc.komarov.file;
 
 public class Refrigerator extends Technic {
 
