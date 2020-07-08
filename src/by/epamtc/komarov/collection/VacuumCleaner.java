@@ -1,10 +1,9 @@
 package by.epamtc.komarov.collection;
 
-public class VacuumCleaner extends App{
-    private String name = "VacuumCleaner";
+public class VacuumCleaner extends Technic {
 
     @Override
     public String getName() {
-        return this.name;
+        return "VacuumCleaner";
     }
 }

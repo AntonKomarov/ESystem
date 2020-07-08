@@ -1,6 +1,6 @@
 package by.epamtc.komarov.collection;
 
-public class Refrigerator extends App{
+public class Refrigerator extends Technic {
 
     @Override
     public String getName() {

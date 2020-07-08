@@ -1,10 +1,9 @@
 package by.epamtc.komarov.collection;
 
-public class TabletPC extends App{
-    private String name = "TabletPC";
+public class TabletPC extends Technic {
 
     @Override
     public String getName() {
-        return this.name;
+        return "TabletPC";
     }
 }

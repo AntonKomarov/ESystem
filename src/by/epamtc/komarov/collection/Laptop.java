@@ -1,6 +1,6 @@
 package by.epamtc.komarov.collection;
 
-public class Laptop extends App{
+public class Laptop extends Technic {
     private String name = "Laptop";
 
     @Override
