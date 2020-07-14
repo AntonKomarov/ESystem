@@ -15,7 +15,7 @@ public class Runner {
         Print.printGood(good, new Speakers(), "FREQUENCY RANGE = 2-4");
         Print.printGood(good, new TabletPC(), "Red");
         Print.printGood(good, new Refrigerator(), "WEIGHT 30");
-        Print.printGood(good, new VacuumCleaner(), "motor SPEED-REGuLATION=2900");
+        Print.printGood(good, new VacuumCleaner(), "POWER_CONSUMPTION=100");
 
     }
 }
