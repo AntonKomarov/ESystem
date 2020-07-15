@@ -1,6 +1,6 @@
 package by.epamtc.komarov.appliance.bean;
 
-public class VacuumCleaner {
+public class VacuumCleaner implements Appliance{
 
     private int power_consumption;
     private char filter_type;

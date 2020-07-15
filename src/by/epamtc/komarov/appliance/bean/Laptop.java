@@ -1,6 +1,6 @@
 package by.epamtc.komarov.appliance.bean;
 
-public class Laptop {
+public class Laptop implements Appliance{
 
     private int battery_capacity;
     private String operation_system;

@@ -1,6 +1,6 @@
 package by.epamtc.komarov.appliance.bean;
 
-public class TabletPC {
+public class TabletPC implements Appliance{
 
     private int battery_capacity;
     private int display_inches;

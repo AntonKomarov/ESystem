@@ -1,6 +1,6 @@
 package by.epamtc.komarov.appliance.bean;
 
-public class Oven {
+public class Oven implements Appliance{
     private int power_consumption;
     private int weight;
     private int capacity;

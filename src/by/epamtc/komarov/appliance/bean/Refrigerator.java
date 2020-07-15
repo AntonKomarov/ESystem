@@ -1,6 +1,6 @@
 package by.epamtc.komarov.appliance.bean;
 
-public class Refrigerator {
+public class Refrigerator implements Appliance{
 
     private int power_consumption;
     private int weight;
