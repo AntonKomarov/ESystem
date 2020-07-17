@@ -7,11 +7,11 @@ import java.io.IOException;
 public class ReadFileImpl implements ReadFile{
 
     @Override
-    public StringBuilder read() {
+    public StringBuilder read(String fileName) {
 
         StringBuilder file = new StringBuilder();
 
-        try(BufferedReader reader = new BufferedReader(new FileReader("resources/appliance.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("App.txt"))) {
 
             String line = reader.readLine();
 
