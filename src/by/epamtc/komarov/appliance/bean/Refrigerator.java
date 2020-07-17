@@ -11,6 +11,10 @@ public class Refrigerator implements Appliance{
 
     // equals, hashCode, toString
 
+    public Refrigerator(){
+
+    }
+
 
     public int getPower_consumption() {
         return power_consumption;
