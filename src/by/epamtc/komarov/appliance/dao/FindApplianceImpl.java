@@ -1,10 +1,10 @@
 package by.epamtc.komarov.appliance.dao;
 
 import by.epamtc.komarov.appliance.bean.Appliance;
-import by.epamtc.komarov.file.technic.ApplianceEnum;
+import by.epamtc.komarov.appliance.bean.ApplianceEnum;
+import by.epamtc.komarov.appliance.bean.Oven;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 public class FindApplianceImpl implements FindAppliance{
 
@@ -13,32 +13,58 @@ public class FindApplianceImpl implements FindAppliance{
 
         ReadFile readFile = new ReadFileImpl();
         String[] good = String.valueOf(readFile.read("App.txt")).split("\n");
+        String onlySymbol = "[ _=;:,-]";
+        String separate = "([ ;,:][A-Z_ :;,]+)=";
 
-        String onlySymbol = "[ _=-]";
+        String[] onlyValue = new String[good.length];
 
         ApplianceEnum applianceEnum;
 
-        for (String element : good) {
+        for (int i = 0; i < good.length; i++) {
+            onlyValue[i] = good[i].replaceAll(separate, " ").replaceAll(";", "");
+            System.out.println(onlyValue[i]);
+        }
 
-            String compactCharacteristic = characteristic.replaceAll(onlySymbol, "");
-            String compactLine = element.replaceAll(onlySymbol, "");
+        String[] array = onlyValue[0].split(" ");
 
+        System.out.println(ApplianceEnum.valueOf(array[0].toUpperCase()));
 
-            applianceEnum = ApplianceEnum.valueOf(applianceName.toUpperCase());
+        if(array[0].equalsIgnoreCase(String.valueOf(ApplianceEnum.valueOf(applianceName.toUpperCase())))){
 
-            if (compactLine.toUpperCase().contains(String.valueOf(applianceEnum))
-                    && (compactLine.contains(compactCharacteristic.toLowerCase())
-                    || compactLine.contains(compactCharacteristic.toUpperCase()))) {
-
-                System.out.println(element);
-
-
+            if (array[0].equalsIgnoreCase("Oven")){
+                Oven oven = new Oven.OvenBuilder()
+                        .setPower_consumption(Integer.parseInt(array[1]))
+                        .setWeight(Integer.parseInt(array[2]))
+                        .setCapacity(Integer.parseInt(array[3]))
+                        .setDepth(Integer.parseInt(array[4]))
+                        .setHeight(Double.parseDouble(array[5]))
+                        .setWidth(Double.parseDouble(array[6]))
+                        .buildOven();
+                System.out.println(oven.getPower_consumption());
+                System.out.println(oven.getCapacity());
             }
+
+
         }
 
 
 
 
 
+
+
+//        for (String element : good) {
+//
+//            String compactCharacteristic = characteristic.replaceAll(onlySymbol, " ");
+//            String compactLine = element.replaceAll(onlySymbol, " ");
+//
+//            applianceEnum = ApplianceEnum.valueOf(applianceName.toUpperCase());
+//
+//            if (compactLine.toUpperCase().contains(String.valueOf(applianceEnum))
+//                    && (compactLine.contains(compactCharacteristic.toLowerCase())
+//                    || compactLine.contains(compactCharacteristic.toUpperCase()))) {
+//
+//            }
+//        }
     }
 }
