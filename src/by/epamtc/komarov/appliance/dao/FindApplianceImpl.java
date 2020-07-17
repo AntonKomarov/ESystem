@@ -1,10 +1,7 @@
 package by.epamtc.komarov.appliance.dao;
 
-import by.epamtc.komarov.appliance.bean.Appliance;
 import by.epamtc.komarov.appliance.bean.ApplianceEnum;
 import by.epamtc.komarov.appliance.bean.Oven;
-
-import java.util.Arrays;
 
 public class FindApplianceImpl implements FindAppliance{
 
@@ -39,7 +36,7 @@ public class FindApplianceImpl implements FindAppliance{
                         .setDepth(Integer.parseInt(array[4]))
                         .setHeight(Double.parseDouble(array[5]))
                         .setWidth(Double.parseDouble(array[6]))
-                        .buildOven();
+                        .ovenBuild();
                 System.out.println(oven.getPower_consumption());
                 System.out.println(oven.getCapacity());
             }
