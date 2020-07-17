@@ -1,9 +1,5 @@
 package by.epamtc.komarov.file.technic;
 
-public class VacuumCleaner extends Technic {
+public class VacuumCleaner implements Appliance {
 
-    @Override
-    public String getName() {
-        return "VacuumCleaner";
-    }
 }

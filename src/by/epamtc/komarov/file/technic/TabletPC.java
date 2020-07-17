@@ -1,9 +1,5 @@
 package by.epamtc.komarov.file.technic;
 
-public class TabletPC extends Technic {
+public class TabletPC implements Appliance{
 
-    @Override
-    public String getName() {
-        return "TabletPC";
-    }
 }
