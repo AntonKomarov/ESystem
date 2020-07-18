@@ -13,7 +13,7 @@ public class ReadFileImpl implements ReadFile {
 
         StringBuilder file = new StringBuilder();
 
-        try(BufferedReader reader = new BufferedReader(new FileReader("App.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("appliance.txt"))) {
 
             String line = reader.readLine();
 

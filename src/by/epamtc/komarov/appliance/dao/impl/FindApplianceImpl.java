@@ -17,7 +17,7 @@ public class FindApplianceImpl implements FindAppliance {
     public void printGood(String applianceName, String characteristic) {
 
         ReadFile readFile = new ReadFileImpl();
-        String[] good = String.valueOf(readFile.readToStringBuilder("App.txt")).split("\n");
+        String[] good = String.valueOf(readFile.readToStringBuilder("appliance.txt")).split("\n");
 
         String onlySymbol = "[ _=;:,-]";
         String name = null;
