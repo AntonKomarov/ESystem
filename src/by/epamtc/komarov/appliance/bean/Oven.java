@@ -36,6 +36,17 @@ public class Oven implements Appliance{
         return width;
     }
 
+    @Override
+    public String toString() {
+        return "Oven: " +
+                "power_consumption=" + power_consumption +
+                ", weight=" + weight +
+                ", capacity=" + capacity +
+                ", depth=" + depth +
+                ", height=" + height +
+                ", width=" + width;
+    }
+
     public static class OvenBuilder{
         Oven oven;
 

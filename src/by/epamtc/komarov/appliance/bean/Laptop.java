@@ -2,7 +2,7 @@ package by.epamtc.komarov.appliance.bean;
 
 public class Laptop implements Appliance{
 
-    private int battery_capacity;
+    private double battery_capacity;
     private String operation_system;
     private int memory_rom;
     private int system_memory;
@@ -14,7 +14,7 @@ public class Laptop implements Appliance{
 
     public Laptop(){
     }
-    public int getBattery_capacity() {
+    public double getBattery_capacity() {
         return battery_capacity;
     }
 
@@ -45,7 +45,7 @@ public class Laptop implements Appliance{
             laptop = new Laptop();
         }
 
-        public LaptopBuilder setBattery_capacity(int battery_capacity) {
+        public LaptopBuilder setBattery_capacity(double battery_capacity) {
              laptop.battery_capacity = battery_capacity;
              return this;
         }
