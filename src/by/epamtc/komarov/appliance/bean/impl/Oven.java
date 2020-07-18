@@ -40,7 +40,7 @@ public class Oven implements Appliance {
 
     @Override
     public String toString() {
-        return "Oven: " +
+        return "Oven : " +
                 "power_consumption=" + power_consumption +
                 ", weight=" + weight +
                 ", capacity=" + capacity +

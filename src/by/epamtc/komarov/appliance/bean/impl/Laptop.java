@@ -42,14 +42,13 @@ public class Laptop implements Appliance {
 
     @Override
     public String toString() {
-        return "Laptop{" +
+        return "Laptop : " +
                 "battery_capacity=" + battery_capacity +
                 ", operation_system='" + operation_system + '\'' +
                 ", memory_rom=" + memory_rom +
                 ", system_memory=" + system_memory +
                 ", cpu=" + cpu +
-                ", display_inchs=" + display_inchs +
-                '}';
+                ", display_inchs=" + display_inchs;
     }
 
 

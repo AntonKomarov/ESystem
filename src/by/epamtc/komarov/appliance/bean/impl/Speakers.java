@@ -33,12 +33,11 @@ public class Speakers implements Appliance {
 
     @Override
     public String toString() {
-        return "Speakers{" +
+        return "Speakers : " +
                 "power_consumption=" + power_consumption +
                 ", number_of_speakers=" + number_of_speakers +
                 ", frequency_range=" + frequency_range +
-                ", cord_length=" + cord_length +
-                '}';
+                ", cord_length=" + cord_length;
     }
 
     @Override

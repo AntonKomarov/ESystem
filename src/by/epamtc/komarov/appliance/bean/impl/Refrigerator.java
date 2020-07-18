@@ -44,14 +44,13 @@ public class Refrigerator implements Appliance {
 
     @Override
     public String toString() {
-        return "Refrigerator{" +
+        return "Refrigerator : " +
                 "power_consumption=" + power_consumption +
                 ", weight=" + weight +
                 ", freezer_capacity=" + freezer_capacity +
                 ", overall_capacity=" + overall_capacity +
                 ", height=" + height +
-                ", width=" + width +
-                '}';
+                ", width=" + width;
     }
 
     @Override

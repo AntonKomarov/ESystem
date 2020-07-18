@@ -28,14 +28,11 @@ public class FindApplianceImpl implements FindAppliance {
             compactCharacteristic = characteristic.replaceAll(onlySymbol, " ");
             compactLine = element.replaceAll(onlySymbol, " ");
 
-            System.out.println(compactCharacteristic);
-            System.out.println(compactLine);
             if (compactLine.toUpperCase().contains(String.valueOf(ApplianceEnum.valueOf(applianceName.toUpperCase())))
                     && (compactLine.contains(compactCharacteristic.toLowerCase())
                     || compactLine.contains(compactCharacteristic.toUpperCase()))) {
 
                 name = element.replaceAll("([ ;,:][A-Z_ :;,]+)=", " ");
-                System.out.println("name = " + name);
             }
         }
 
@@ -53,7 +50,6 @@ public class FindApplianceImpl implements FindAppliance {
         Appliance appliance = null;
 
         String[] array = getParameters(lineName);
-        System.out.println(Arrays.toString(array));
 
         if (array[0].equalsIgnoreCase("Oven")) {
 

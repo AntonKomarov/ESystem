@@ -43,14 +43,13 @@ public class VacuumCleaner implements Appliance {
 
     @Override
     public String toString() {
-        return "VacuumCleaner{" +
+        return "VacuumCleaner : " +
                 "power_consumption=" + power_consumption +
                 ", filter_type=" + filter_type +
                 ", bag_type='" + bag_type + '\'' +
                 ", wand_type='" + wand_type + '\'' +
                 ", motor_speed_regulation=" + motor_speed_regulation +
-                ", cleaning_width=" + cleaning_width +
-                '}';
+                ", cleaning_width=" + cleaning_width;
     }
 
     @Override
