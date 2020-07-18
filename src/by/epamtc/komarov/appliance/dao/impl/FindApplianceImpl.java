@@ -28,11 +28,14 @@ public class FindApplianceImpl implements FindAppliance {
             compactCharacteristic = characteristic.replaceAll(onlySymbol, " ");
             compactLine = element.replaceAll(onlySymbol, " ");
 
+            System.out.println(compactCharacteristic);
+            System.out.println(compactLine);
             if (compactLine.toUpperCase().contains(String.valueOf(ApplianceEnum.valueOf(applianceName.toUpperCase())))
                     && (compactLine.contains(compactCharacteristic.toLowerCase())
                     || compactLine.contains(compactCharacteristic.toUpperCase()))) {
 
                 name = element.replaceAll("([ ;,:][A-Z_ :;,]+)=", " ");
+                System.out.println("name = " + name);
             }
         }
 
@@ -110,7 +113,7 @@ public class FindApplianceImpl implements FindAppliance {
             appliance = new Speakers.SpeakerBuilder()
                     .setPower_consumption(Integer.parseInt(array[1]))
                     .setNumber_of_speakers(Integer.parseInt(array[2]))
-                    .setFrequency_range(Integer.parseInt(array[3]))
+                    .setFrequency_range(array[3])
                     .setCord_length(Integer.parseInt(array[4]))
                     .speakersBuild();
         }

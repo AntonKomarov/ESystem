@@ -8,7 +8,7 @@ public class Speakers implements Appliance {
 
     private int power_consumption;
     private int number_of_speakers;
-    private double frequency_range;
+    private String frequency_range;
     private int cord_length;
 
     public Speakers(){
@@ -23,7 +23,7 @@ public class Speakers implements Appliance {
         return number_of_speakers;
     }
 
-    public double getFrequency_range() {
+    public String getFrequency_range() {
         return frequency_range;
     }
 
@@ -48,8 +48,8 @@ public class Speakers implements Appliance {
         Speakers speakers = (Speakers) o;
         return power_consumption == speakers.power_consumption &&
                 number_of_speakers == speakers.number_of_speakers &&
-                Double.compare(speakers.frequency_range, frequency_range) == 0 &&
-                cord_length == speakers.cord_length;
+                cord_length == speakers.cord_length &&
+                frequency_range.equals(speakers.frequency_range);
     }
 
     @Override
@@ -75,7 +75,7 @@ public class Speakers implements Appliance {
             return this;
         }
 
-        public SpeakerBuilder setFrequency_range(double frequency_range) {
+        public SpeakerBuilder setFrequency_range(String frequency_range) {
             speakers.frequency_range = frequency_range;
             return this;
         }
