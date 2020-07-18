@@ -7,10 +7,11 @@ import by.epamtc.komarov.appliance.dao.FindAppliance;
 import by.epamtc.komarov.appliance.dao.ReadFile;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FindApplianceImpl implements FindAppliance {
+
+////////////////// Разделить программу на части по методам и между Service and DAO
 
     @Override
     public void printGood(String applianceName, String characteristic) {
