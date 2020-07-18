@@ -1,5 +1,7 @@
 package by.epamtc.komarov.appliance.bean;
 
+import java.util.Objects;
+
 public class Laptop implements Appliance{
 
     private double battery_capacity;
@@ -36,6 +38,37 @@ public class Laptop implements Appliance{
 
     public String getOperation_system() {
         return operation_system;
+    }
+
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "battery_capacity=" + battery_capacity +
+                ", operation_system='" + operation_system + '\'' +
+                ", memory_rom=" + memory_rom +
+                ", system_memory=" + system_memory +
+                ", cpu=" + cpu +
+                ", display_inchs=" + display_inchs +
+                '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Laptop laptop = (Laptop) o;
+        return Double.compare(laptop.battery_capacity, battery_capacity) == 0 &&
+                memory_rom == laptop.memory_rom &&
+                system_memory == laptop.system_memory &&
+                Double.compare(laptop.cpu, cpu) == 0 &&
+                display_inchs == laptop.display_inchs &&
+                operation_system.equals(laptop.operation_system);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(battery_capacity, operation_system, memory_rom, system_memory, cpu, display_inchs);
     }
 
     public static class LaptopBuilder{

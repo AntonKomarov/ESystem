@@ -14,8 +14,8 @@ public class Runner {
 
 
         findAppliance.printGood("Oven", "height 40");
-//        findAppliance.printGood("Oven", "height 45");
-//        findAppliance.printGood("laptop", "memory rom 8000");
+        findAppliance.printGood("Oven", "height 45");
+        findAppliance.printGood("laptop", "memory rom 8000");
 //        Print.printGood(new Speakers(), "FREQUENCY RANGE = 2-4");
 //        Print.printGood(new TabletPC(), "Red");
 //        Print.printGood(new Refrigerator(), "WEIGHT 30");

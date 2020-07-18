@@ -1,5 +1,7 @@
 package by.epamtc.komarov.appliance.bean;
 
+import java.util.Objects;
+
 public class Speakers implements Appliance{
 
     private int power_consumption;
@@ -28,6 +30,32 @@ public class Speakers implements Appliance{
 
     public int getCord_length() {
         return cord_length;
+    }
+
+    @Override
+    public String toString() {
+        return "Speakers{" +
+                "power_consumption=" + power_consumption +
+                ", number_of_speakers=" + number_of_speakers +
+                ", frequency_range=" + frequency_range +
+                ", cord_length=" + cord_length +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Speakers speakers = (Speakers) o;
+        return power_consumption == speakers.power_consumption &&
+                number_of_speakers == speakers.number_of_speakers &&
+                Double.compare(speakers.frequency_range, frequency_range) == 0 &&
+                cord_length == speakers.cord_length;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, number_of_speakers, frequency_range, cord_length);
     }
 
     public static class SpeakerBuilder{

@@ -1,5 +1,7 @@
 package by.epamtc.komarov.appliance.bean;
 
+import java.util.Objects;
+
 public class TabletPC implements Appliance{
 
     private int battery_capacity;
@@ -34,6 +36,33 @@ public class TabletPC implements Appliance{
         return color;
     }
 
+    @Override
+    public String toString() {
+        return "TabletPC{" +
+                "battery_capacity=" + battery_capacity +
+                ", display_inches=" + display_inches +
+                ", memory_rom=" + memory_rom +
+                ", flash_memory_capacity=" + flash_memory_capacity +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TabletPC tabletPC = (TabletPC) o;
+        return battery_capacity == tabletPC.battery_capacity &&
+                display_inches == tabletPC.display_inches &&
+                memory_rom == tabletPC.memory_rom &&
+                flash_memory_capacity == tabletPC.flash_memory_capacity &&
+                color.equals(tabletPC.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(battery_capacity, display_inches, memory_rom, flash_memory_capacity, color);
+    }
 
     public static class TabletPCBuilder {
         TabletPC tabletPC;

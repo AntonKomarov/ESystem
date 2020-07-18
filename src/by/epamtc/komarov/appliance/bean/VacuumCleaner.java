@@ -1,5 +1,7 @@
 package by.epamtc.komarov.appliance.bean;
 
+import java.util.Objects;
+
 public class VacuumCleaner implements Appliance{
 
     private int power_consumption;
@@ -39,6 +41,35 @@ public class VacuumCleaner implements Appliance{
         return cleaning_width;
     }
 
+    @Override
+    public String toString() {
+        return "VacuumCleaner{" +
+                "power_consumption=" + power_consumption +
+                ", filter_type=" + filter_type +
+                ", bag_type='" + bag_type + '\'' +
+                ", wand_type='" + wand_type + '\'' +
+                ", motor_speed_regulation=" + motor_speed_regulation +
+                ", cleaning_width=" + cleaning_width +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VacuumCleaner that = (VacuumCleaner) o;
+        return power_consumption == that.power_consumption &&
+                filter_type == that.filter_type &&
+                motor_speed_regulation == that.motor_speed_regulation &&
+                cleaning_width == that.cleaning_width &&
+                bag_type.equals(that.bag_type) &&
+                wand_type.equals(that.wand_type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, filter_type, bag_type, wand_type, motor_speed_regulation, cleaning_width);
+    }
 
     public static class VacuumCleanerBuilder{
         VacuumCleaner vacuumCleaner;

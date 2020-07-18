@@ -1,5 +1,7 @@
 package by.epamtc.komarov.appliance.bean;
 
+import java.util.Objects;
+
 public class Refrigerator implements Appliance{
 
     private int power_consumption;
@@ -40,6 +42,35 @@ public class Refrigerator implements Appliance{
         return width;
     }
 
+    @Override
+    public String toString() {
+        return "Refrigerator{" +
+                "power_consumption=" + power_consumption +
+                ", weight=" + weight +
+                ", freezer_capacity=" + freezer_capacity +
+                ", overall_capacity=" + overall_capacity +
+                ", height=" + height +
+                ", width=" + width +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Refrigerator that = (Refrigerator) o;
+        return power_consumption == that.power_consumption &&
+                weight == that.weight &&
+                freezer_capacity == that.freezer_capacity &&
+                overall_capacity == that.overall_capacity &&
+                height == that.height &&
+                width == that.width;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(power_consumption, weight, freezer_capacity, overall_capacity, height, width);
+    }
 
     public static class RefrigeratorBuilder {
         Refrigerator refrigerator;
