@@ -10,8 +10,6 @@ public class Oven implements Appliance{
     private double height;
     private double width;
 
-    // equals, hashCode, toString
-
     public Oven(){}
 
     public int getPower_consumption() {

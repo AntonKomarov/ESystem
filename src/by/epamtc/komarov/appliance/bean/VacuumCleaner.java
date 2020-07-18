@@ -11,8 +11,6 @@ public class VacuumCleaner implements Appliance{
     private int motor_speed_regulation;
     private int cleaning_width;
 
-    // equals, hashCode, toString
-
     public VacuumCleaner(){
 
     }

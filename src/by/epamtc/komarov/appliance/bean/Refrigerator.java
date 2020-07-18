@@ -11,8 +11,6 @@ public class Refrigerator implements Appliance{
     private int height;
     private int width;
 
-    // equals, hashCode, toString
-
     public Refrigerator(){
 
     }

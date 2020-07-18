@@ -10,8 +10,6 @@ public class TabletPC implements Appliance{
     private int flash_memory_capacity;
     private String color;
 
-    // equals, hashCode, toString
-
     public TabletPC(){
 
     }

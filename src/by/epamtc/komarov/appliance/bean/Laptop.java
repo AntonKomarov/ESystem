@@ -11,8 +11,6 @@ public class Laptop implements Appliance{
     private double cpu;
     private int display_inchs;
 
-    // equals, hashCode, toString
-
 
     public Laptop(){
     }

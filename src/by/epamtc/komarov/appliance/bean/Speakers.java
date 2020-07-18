@@ -9,9 +9,6 @@ public class Speakers implements Appliance{
     private double frequency_range;
     private int cord_length;
 
-    // equals, hashCode, toString
-
-
     public Speakers(){
 
     }
