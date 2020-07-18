@@ -1,13 +1,15 @@
-package by.epamtc.komarov.appliance.dao;
+package by.epamtc.komarov.appliance.dao.impl;
+
+import by.epamtc.komarov.appliance.dao.ReadFile;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ReadFileImpl implements ReadFile{
+public class ReadFileImpl implements ReadFile {
 
     @Override
-    public StringBuilder read(String fileName) {
+    public StringBuilder readToStringBuilder(String fileName) {
 
         StringBuilder file = new StringBuilder();
 

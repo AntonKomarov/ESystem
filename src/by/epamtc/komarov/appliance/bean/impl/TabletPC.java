@@ -1,8 +1,10 @@
-package by.epamtc.komarov.appliance.bean;
+package by.epamtc.komarov.appliance.bean.impl;
+
+import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class TabletPC implements Appliance{
+public class TabletPC implements Appliance {
 
     private int battery_capacity;
     private int display_inches;

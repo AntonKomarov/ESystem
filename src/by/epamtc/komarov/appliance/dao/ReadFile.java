@@ -1,5 +1,5 @@
 package by.epamtc.komarov.appliance.dao;
 
 public interface ReadFile {
-    public StringBuilder read(String fileName);
+    public StringBuilder readToStringBuilder(String fileName);
 }

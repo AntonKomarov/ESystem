@@ -1,8 +1,10 @@
-package by.epamtc.komarov.appliance.bean;
+package by.epamtc.komarov.appliance.bean.impl;
+
+import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class Speakers implements Appliance{
+public class Speakers implements Appliance {
 
     private int power_consumption;
     private int number_of_speakers;

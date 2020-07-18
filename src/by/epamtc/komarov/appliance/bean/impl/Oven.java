@@ -1,8 +1,10 @@
-package by.epamtc.komarov.appliance.bean;
+package by.epamtc.komarov.appliance.bean.impl;
+
+import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class Oven implements Appliance{
+public class Oven implements Appliance {
     private int power_consumption;
     private int weight;
     private int capacity;

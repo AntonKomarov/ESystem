@@ -1,11 +1,13 @@
-package by.epamtc.komarov.appliance.bean;
+package by.epamtc.komarov.appliance.bean.impl;
+
+import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class VacuumCleaner implements Appliance{
+public class VacuumCleaner implements Appliance {
 
     private int power_consumption;
-    private char filter_type;
+    private String filter_type;
     private String bag_type;
     private String wand_type;
     private int motor_speed_regulation;
@@ -19,7 +21,7 @@ public class VacuumCleaner implements Appliance{
         return power_consumption;
     }
 
-    public char getFilter_type() {
+    public String getFilter_type() {
         return filter_type;
     }
 
@@ -57,9 +59,9 @@ public class VacuumCleaner implements Appliance{
         if (o == null || getClass() != o.getClass()) return false;
         VacuumCleaner that = (VacuumCleaner) o;
         return power_consumption == that.power_consumption &&
-                filter_type == that.filter_type &&
                 motor_speed_regulation == that.motor_speed_regulation &&
                 cleaning_width == that.cleaning_width &&
+                filter_type.equals(that.filter_type) &&
                 bag_type.equals(that.bag_type) &&
                 wand_type.equals(that.wand_type);
     }
@@ -82,7 +84,7 @@ public class VacuumCleaner implements Appliance{
             return this;
         }
 
-        public VacuumCleanerBuilder setFilter_type(char filter_type) {
+        public VacuumCleanerBuilder setFilter_type(String filter_type) {
             vacuumCleaner.filter_type = filter_type;
             return this;
 

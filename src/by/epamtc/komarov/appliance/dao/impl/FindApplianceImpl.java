@@ -1,9 +1,10 @@
-package by.epamtc.komarov.appliance.dao;
+package by.epamtc.komarov.appliance.dao.impl;
 
 import by.epamtc.komarov.appliance.bean.Appliance;
 import by.epamtc.komarov.appliance.bean.ApplianceEnum;
-import by.epamtc.komarov.appliance.bean.Laptop;
-import by.epamtc.komarov.appliance.bean.Oven;
+import by.epamtc.komarov.appliance.bean.impl.*;
+import by.epamtc.komarov.appliance.dao.FindAppliance;
+import by.epamtc.komarov.appliance.dao.ReadFile;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class FindApplianceImpl implements FindAppliance {
     public void printGood(String applianceName, String characteristic) {
 
         ReadFile readFile = new ReadFileImpl();
-        String[] good = String.valueOf(readFile.read("App.txt")).split("\n");
+        String[] good = String.valueOf(readFile.readToStringBuilder("App.txt")).split("\n");
 
         String onlySymbol = "[ _=;:,-]";
         String name = null;
@@ -31,11 +32,9 @@ public class FindApplianceImpl implements FindAppliance {
                     && (compactLine.contains(compactCharacteristic.toLowerCase())
                     || compactLine.contains(compactCharacteristic.toUpperCase()))) {
 
-                System.out.println(element);
                 name = element.replaceAll("([ ;,:][A-Z_ :;,]+)=", " ");
             }
         }
-        System.out.println(name);
 
         List<Appliance> appliances = new ArrayList<>();
         appliances.add(getAppliance(name));
@@ -51,6 +50,7 @@ public class FindApplianceImpl implements FindAppliance {
         Appliance appliance = null;
 
         String[] array = getParameters(lineName);
+        System.out.println(Arrays.toString(array));
 
         if (array[0].equalsIgnoreCase("Oven")) {
 
@@ -73,6 +73,46 @@ public class FindApplianceImpl implements FindAppliance {
                     .setCpu(Double.parseDouble(array[5]))
                     .setDisplay_inchs(Integer.parseInt(array[6]))
                     .buildLaptop();
+
+        } else if (array[0].equalsIgnoreCase("Refrigerator")){
+
+            appliance = new Refrigerator.RefrigeratorBuilder()
+                    .setPower_consumption(Integer.parseInt(array[1]))
+                    .setWeight(Integer.parseInt(array[2]))
+                    .setFreezer_capacity(Integer.parseInt(array[3]))
+                    .setOverall_capacity(Integer.parseInt(array[4]))
+                    .setHeight(Integer.parseInt(array[5]))
+                    .setWidth(Integer.parseInt(array[6]))
+                    .refrigeratorBuild();
+
+        } else if (array[0].equalsIgnoreCase("VacuumCleaner")){
+
+            appliance = new VacuumCleaner.VacuumCleanerBuilder()
+                    .setPower_consumption(Integer.parseInt(array[1]))
+                    .setFilter_type(array[2])
+                    .setBag_type(array[3])
+                    .setWand_type(array[4])
+                    .setMotor_speed_regulation(Integer.parseInt(array[5]))
+                    .setCleaning_width(Integer.parseInt(array[6]))
+                    .vacuumCleanerBuild();
+
+        } else if (array[0].equalsIgnoreCase("TabletPC")){
+
+            appliance = new TabletPC.TabletPCBuilder()
+                    .setBattery_capacity(Integer.parseInt(array[1]))
+                    .setDisplay_inches(Integer.parseInt(array[2]))
+                    .setMemory_rom(Integer.parseInt(array[3]))
+                    .setFlash_memory_capacity(Integer.parseInt(array[4]))
+                    .setColor(array[5])
+                    .tabletPCBuild();
+        } else if (array[0].equalsIgnoreCase("Speakers")){
+
+            appliance = new Speakers.SpeakerBuilder()
+                    .setPower_consumption(Integer.parseInt(array[1]))
+                    .setNumber_of_speakers(Integer.parseInt(array[2]))
+                    .setFrequency_range(Integer.parseInt(array[3]))
+                    .setCord_length(Integer.parseInt(array[4]))
+                    .speakersBuild();
         }
 
         return appliance;
