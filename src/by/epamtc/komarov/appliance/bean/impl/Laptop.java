@@ -90,7 +90,7 @@ public class Laptop implements Appliance {
 
 
         public LaptopBuilder setSystem_memory(int system_memory) {
-            laptop.memory_rom = system_memory;
+            laptop.system_memory = system_memory;
             return this;
         }
 

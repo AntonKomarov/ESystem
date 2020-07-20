@@ -104,7 +104,7 @@ public class Refrigerator implements Appliance {
         }
 
         public RefrigeratorBuilder setWidth(int width) {
-            refrigerator.weight = width;
+            refrigerator.width = width;
             return this;
         }
 
