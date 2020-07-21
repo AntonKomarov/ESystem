@@ -7,7 +7,7 @@ import by.epamtc.komarov.appliance.dao.ReadFile;
 public class FindApplianceImpl implements FindAppliance {
 
     @Override
-    public String findAppliance(String applianceName, String characteristic) {
+    public String find(String applianceName, String characteristic) {
 
         ReadFile readFile = new ReadFileImpl();
         String[] good = String.valueOf(readFile.readToStringBuilder("appliance.txt")).split("\n");

@@ -4,7 +4,7 @@ import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class Laptop implements Appliance {
+public class Laptop extends Appliance {
 
     private double battery_capacity;
     private String operation_system;

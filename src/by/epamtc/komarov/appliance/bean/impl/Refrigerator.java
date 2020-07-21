@@ -4,7 +4,7 @@ import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class Refrigerator implements Appliance {
+public class Refrigerator extends Appliance {
 
     private int power_consumption;
     private int weight;

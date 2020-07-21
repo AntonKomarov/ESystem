@@ -4,7 +4,7 @@ import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class Speakers implements Appliance {
+public class Speakers extends Appliance {
 
     private int power_consumption;
     private int number_of_speakers;

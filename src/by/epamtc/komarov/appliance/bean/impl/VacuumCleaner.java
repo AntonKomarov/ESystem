@@ -4,7 +4,7 @@ import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class VacuumCleaner implements Appliance {
+public class VacuumCleaner extends Appliance {
 
     private int power_consumption;
     private String filter_type;

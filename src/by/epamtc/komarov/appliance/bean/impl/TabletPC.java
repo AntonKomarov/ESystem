@@ -4,7 +4,7 @@ import by.epamtc.komarov.appliance.bean.Appliance;
 
 import java.util.Objects;
 
-public class TabletPC implements Appliance {
+public class TabletPC extends Appliance {
 
     private int battery_capacity;
     private int display_inches;
