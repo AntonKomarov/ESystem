@@ -6,7 +6,7 @@ public class ExerciseThree {
 
     public static void main(String[] args) {
 
-        int size = 9;
+        int size = 10;
         int[][] matrix = new int[size][size];
 
         for (int i = 0; i < matrix.length; i++) {
@@ -15,13 +15,33 @@ public class ExerciseThree {
             }
         }
 
-        fullLeftSide(matrix);
-        fullRightSide(matrix);
+        if(size % 2 == 0){
+            fullEvenMatrix(matrix);
+        } else {
+            fullUnevenMatrix(matrix);
+        }
 
         PrintMatrix.print(matrix);
+
     }
 
-    public static int[][] fullLeftSide(int[][] matrix) {
+    public static int[][] fullEvenMatrix(int[][] matrix){
+
+        for (int i = 1; i < matrix.length / 2; i++) {
+            for (int j = 0; j <= i-1; j++) {
+
+                matrix[i][j] = 0;
+                matrix[matrix.length - 1 - i][j] = 0;
+                matrix[i][matrix.length - 1 - j] = 0;
+                matrix[matrix.length - 1 - i][matrix.length - 1 - j] = 0;
+
+            }
+        }
+
+        return matrix;
+    }
+
+    public static int[][] fullUnevenMatrix(int[][] matrix) {
         int index = 1;
 
         for (int i = 1; i < matrix.length - 1; i++) {
@@ -37,24 +57,27 @@ public class ExerciseThree {
             }
 
         }
-        return matrix;
+
+        return fullRightSide(matrix);
     }
 
     public static int[][] fullRightSide(int[][] matrix) {
-        int indexSecond = matrix.length - 1;
+        int index = matrix.length - 1;
 
         for (int i = matrix.length - 2; i >= 1; i--) {
-            for (int j = matrix.length - 1; j >= indexSecond ; j--) {
+            for (int j = matrix.length - 1; j >= index ; j--) {
 
                 matrix[i][j] = 0;
             }
 
             if (i > matrix.length / 2) {
-                --indexSecond;
+                --index;
             } else {
-                ++indexSecond;
+                ++index;
             }
         }
         return matrix;
     }
+
+
 }
