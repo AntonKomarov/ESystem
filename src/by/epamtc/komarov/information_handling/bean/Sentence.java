@@ -4,5 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sentence {
-    List<Word> words = new ArrayList<>();
+    private List<Word> words;
+
+    {
+        words = new ArrayList<>();
+    }
+
+    public List<Word> getWords(){
+        return words;
+    }
+
+    public void addWords(Word word){
+        this.words.add(word);
+    }
 }
