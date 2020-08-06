@@ -11,7 +11,6 @@ public class ReadFileImpl implements ReadFile{
     @Override
     public StringBuilder readToStringBuilder(String fileName)  {
 
-
         StringBuilder file = new StringBuilder();
 
         try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
