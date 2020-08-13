@@ -1,6 +1,7 @@
 package by.epamtc.komarov.information_handling;
 
 import by.epamtc.komarov.information_handling.bean.CodeBlock;
+import by.epamtc.komarov.information_handling.bean.Component;
 import by.epamtc.komarov.information_handling.dao.ReadFile;
 import by.epamtc.komarov.information_handling.dao.ReadFileImpl;
 import by.epamtc.komarov.information_handling.model.Create;
@@ -17,7 +18,8 @@ public class Client {
         ReadFile readFile = new ReadFileImpl();
         String text = String.valueOf(readFile.
                 readToStringBuilder("src/by/epamtc/komarov/information_handling/resources/text.txt"));
-        CodeBlock outputCodeBlock = new Create().codeBlock(text);
+        Component outputCodeBlock = new Create().codeBlock(text);
+        Component outputWord = new Create().word(text);
 
         try {
             try {
@@ -26,11 +28,11 @@ public class Client {
 
                 oos = new ObjectOutputStream(clientSocket.getOutputStream());
                 oos.writeObject(outputCodeBlock);
+                oos.writeObject(outputWord);
 
             } finally {
-                System.out.println("Client is closed");
-
                 clientSocket.close();
+                System.out.println("Client was closed");
                 oos.close();
             }
         } catch (IOException e) {

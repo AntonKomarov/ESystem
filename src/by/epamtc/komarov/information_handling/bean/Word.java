@@ -6,6 +6,10 @@ import java.util.Objects;
 public class Word implements Serializable, Component {
     private String word;
 
+    public Word(String word){
+        this.word = word;
+    }
+
     public String getWord(){
         return word;
     }
