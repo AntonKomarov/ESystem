@@ -1,5 +1,5 @@
 package by.epamtc.komarov.information_handling.bean;
 
-public class Sentence {
-
+public interface Component {
+    Object getComponent();
 }
