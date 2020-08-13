@@ -18,6 +18,7 @@ public class Client {
         ReadFile readFile = new ReadFileImpl();
         String text = String.valueOf(readFile.
                 readToStringBuilder("src/by/epamtc/komarov/information_handling/resources/text.txt"));
+
         Component outputCodeBlock = new Create().codeBlock(text);
         Component outputWord = new Create().word(text);
 

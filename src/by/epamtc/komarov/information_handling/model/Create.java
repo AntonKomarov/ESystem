@@ -10,13 +10,13 @@ import java.util.regex.Pattern;
 public class Create {
 
     public Component word(String text){
-        String wordParser = "[A-Za-z]";
-        StringBuilder word = null;
+        String wordParser = "[A-Za-z]+";
+        StringBuilder word = new StringBuilder();
 
         Matcher matcher = Pattern.compile(wordParser).matcher(text);
 
         while(matcher.find()){
-            word.append(matcher.group());
+            word.append(matcher.group()).append("\n");
         }
 
         return new Word(String.valueOf(word));

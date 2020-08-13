@@ -1,6 +1,8 @@
 package by.epamtc.komarov.information_handling;
 
 import by.epamtc.komarov.information_handling.bean.CodeBlock;
+import by.epamtc.komarov.information_handling.bean.Component;
+import by.epamtc.komarov.information_handling.bean.Word;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -20,21 +22,25 @@ public class Server {
                 System.out.println("Server is started");
                 clientSocket = server.accept();
 
-                 try{
+                 try {
 
                      ois = new ObjectInputStream(clientSocket.getInputStream());
 
-                     CodeBlock codeBlock = (CodeBlock)ois.readObject();
+                     Component codeBlock = (CodeBlock)ois.readObject();
                      System.out.println("CodeBlock from Server:\n" + codeBlock);
 
-                }  finally {
+                     Component word = (Word)ois.readObject();
+                     System.out.println(word);
+
+
+                 } finally {
                     clientSocket.close();
                     ois.close();
-                }
+                 }
             }
             finally{
-                System.out.println("Server is closed");
                 server.close();
+                System.out.println("Server is closed");
             }
         } catch (IOException | ClassNotFoundException e){
             System.out.println(e);
