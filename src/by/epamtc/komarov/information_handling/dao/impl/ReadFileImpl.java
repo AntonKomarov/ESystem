@@ -1,17 +1,16 @@
-package by.epamtc.komarov.information_handling.dao;
+package by.epamtc.komarov.information_handling.dao.impl;
+
+import by.epamtc.komarov.information_handling.dao.ReadFile;
 
 import java.io.*;
 
-public class ReadFileImpl implements ReadFile{
-
-    public static void createFile(){
-        File writer = new File("src/by/epamtc/komarov/information_handling/text.txt");
-    }
+public class ReadFileImpl implements ReadFile {
 
     @Override
-    public StringBuilder readToStringBuilder(String fileName)  {
+    public String read()  {
 
         StringBuilder file = new StringBuilder();
+        String fileName = "src/by/epamtc/komarov/information_handling/resources/text.txt";
 
         try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
 
@@ -26,6 +25,6 @@ public class ReadFileImpl implements ReadFile{
             System.out.println(e.getMessage());
         }
 
-        return file;
+        return String.valueOf(file);
     }
 }

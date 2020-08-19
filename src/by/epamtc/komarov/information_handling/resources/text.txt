@@ -38,7 +38,6 @@ void applyBrakes() {
  } else {
  System.err.println("The bicycle has already stopped!");
  }
-
 }
 
 The following program, IfElseDemo, assigns a grade based on the value of a test score: an A for a score of 90% or above, a B for a score of 80%

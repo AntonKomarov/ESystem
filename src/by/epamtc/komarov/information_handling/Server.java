@@ -1,8 +1,7 @@
 package by.epamtc.komarov.information_handling;
 
-import by.epamtc.komarov.information_handling.bean.CodeBlock;
+import by.epamtc.komarov.information_handling.bean.impl.CodeBlock;
 import by.epamtc.komarov.information_handling.bean.Component;
-import by.epamtc.komarov.information_handling.bean.Word;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -11,7 +10,8 @@ import java.net.Socket;
 public class Server {
     private static Socket clientSocket;
     private static ServerSocket server;
-    private static ObjectInputStream ois;
+    private static ObjectOutputStream moveToClient;
+    private static ObjectInputStream getFromClient;
 
     public static void main(String[] args) {
 
@@ -24,18 +24,18 @@ public class Server {
 
                  try {
 
-                     ois = new ObjectInputStream(clientSocket.getInputStream());
+                     getFromClient = new ObjectInputStream(clientSocket.getInputStream());
 
-                     Component codeBlock = (CodeBlock)ois.readObject();
-                     System.out.println("CodeBlock from Server:\n" + codeBlock);
+                     Component codeBlock = (CodeBlock) getFromClient.readObject();
+                     System.out.println("CodeBlock from Server is accepted\n");
 
-                     Component word = (Word)ois.readObject();
-                     System.out.println(word);
-
+                     moveToClient = new ObjectOutputStream(clientSocket.getOutputStream());
+                     moveToClient.writeObject(codeBlock);
+                     System.out.println("CodeBlock was moved to client");
 
                  } finally {
                     clientSocket.close();
-                    ois.close();
+                    getFromClient.close();
                  }
             }
             finally{

@@ -1,4 +1,6 @@
-package by.epamtc.komarov.information_handling.bean;
+package by.epamtc.komarov.information_handling.bean.impl;
+
+import by.epamtc.komarov.information_handling.bean.Component;
 
 import java.io.Serializable;
 import java.util.*;
@@ -8,8 +10,8 @@ public class CodeBlock implements Serializable, Component {
     private StringBuilder codeBlock;
 
     @Override
-    public Object getComponent(){
-        return codeBlock;
+    public String getComponent(){
+        return String.valueOf(codeBlock);
     }
     public CodeBlock(StringBuilder codeBlock){
         this.codeBlock = codeBlock;

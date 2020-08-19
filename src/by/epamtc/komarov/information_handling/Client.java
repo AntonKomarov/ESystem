@@ -1,9 +1,9 @@
 package by.epamtc.komarov.information_handling;
 
-import by.epamtc.komarov.information_handling.bean.CodeBlock;
 import by.epamtc.komarov.information_handling.bean.Component;
+import by.epamtc.komarov.information_handling.bean.impl.CodeBlock;
 import by.epamtc.komarov.information_handling.dao.ReadFile;
-import by.epamtc.komarov.information_handling.dao.ReadFileImpl;
+import by.epamtc.komarov.information_handling.dao.impl.ReadFileImpl;
 import by.epamtc.komarov.information_handling.model.Create;
 
 import java.io.*;
@@ -11,32 +11,33 @@ import java.net.Socket;
 
 public class Client {
     private static Socket clientSocket;
-    private static ObjectOutputStream oos;
+    private static ObjectOutputStream moveToServer;
+    private static ObjectInputStream getFromServer;
 
     public static void main(String[] args) {
 
-        ReadFile readFile = new ReadFileImpl();
-        String text = String.valueOf(readFile.
-                readToStringBuilder("src/by/epamtc/komarov/information_handling/resources/text.txt"));
+        ReadFile file = new ReadFileImpl();
 
-        Component outputCodeBlock = new Create().codeBlock(text);
-        Component outputWord = new Create().word(text);
+        Component outputCodeBlock = new Create().codeBlock(file.read());
 
         try {
             try {
 
                 clientSocket = new Socket("localhost", 4004);
 
-                oos = new ObjectOutputStream(clientSocket.getOutputStream());
-                oos.writeObject(outputCodeBlock);
-                oos.writeObject(outputWord);
+                moveToServer = new ObjectOutputStream(clientSocket.getOutputStream());
+                moveToServer.writeObject(outputCodeBlock);
+
+                getFromServer = new ObjectInputStream(clientSocket.getInputStream());
+                Component codeBlock = (CodeBlock)getFromServer.readObject();
+                System.out.println(codeBlock);
 
             } finally {
                 clientSocket.close();
                 System.out.println("Client was closed");
-                oos.close();
+                moveToServer.close();
             }
-        } catch (IOException e) {
+        } catch (IOException | ClassNotFoundException e) {
             System.err.println(e);
         }
     }

@@ -1,4 +1,6 @@
-package by.epamtc.komarov.information_handling.bean;
+package by.epamtc.komarov.information_handling.bean.impl;
+
+import by.epamtc.komarov.information_handling.bean.Component;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -39,7 +41,7 @@ public class Word implements Serializable, Component {
     }
 
     @Override
-    public Object getComponent() {
+    public String getComponent() {
         return word;
     }
 }
