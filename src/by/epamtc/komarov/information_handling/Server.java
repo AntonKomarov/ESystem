@@ -24,11 +24,12 @@ public class Server {
 
                  try {
 
+                     // Taking object from Client
                      getFromClient = new ObjectInputStream(clientSocket.getInputStream());
-
                      Component codeBlock = (CodeBlock) getFromClient.readObject();
                      System.out.println("CodeBlock from Server is accepted\n");
 
+                     // Sending object to Client
                      moveToClient = new ObjectOutputStream(clientSocket.getOutputStream());
                      moveToClient.writeObject(codeBlock);
                      System.out.println("CodeBlock was moved to client");

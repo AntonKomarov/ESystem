@@ -10,6 +10,7 @@ public class ReadFileImpl implements ReadFile {
     public String read()  {
 
         StringBuilder file = new StringBuilder();
+        // don't write "src" in the text place? change it.
         String fileName = "src/by/epamtc/komarov/information_handling/resources/text.txt";
 
         try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {

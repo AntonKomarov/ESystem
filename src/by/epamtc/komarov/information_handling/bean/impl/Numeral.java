@@ -5,35 +5,36 @@ import by.epamtc.komarov.information_handling.bean.Component;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Word implements Serializable, Component {
-    private final String word;
+public class Numeral implements Serializable, Component {
 
-    public Word(String word){
-        this.word = word;
+    private final String digit;
+
+    public Numeral(String digit) {
+        this.digit = digit;
+    }
+
+    @Override
+    public String getComponent() {
+        return digit;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Word word1 = (Word) o;
-        return word.equals(word1.word);
+        Numeral numeral = (Numeral) o;
+        return digit.equals(numeral.digit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(word);
+        return Objects.hash(digit);
     }
 
     @Override
     public String toString() {
-        return "Word{" +
-                "word='" + word + '\'' +
+        return "Numeral{" +
+                "digit='" + digit + '\'' +
                 '}';
-    }
-
-    @Override
-    public String getComponent() {
-        return word;
     }
 }

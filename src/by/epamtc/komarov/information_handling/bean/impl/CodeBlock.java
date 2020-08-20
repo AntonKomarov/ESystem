@@ -7,7 +7,7 @@ import java.util.*;
 
 public class CodeBlock implements Serializable, Component {
 
-    private StringBuilder codeBlock;
+    private final StringBuilder codeBlock;
 
     @Override
     public String getComponent(){
@@ -17,13 +17,6 @@ public class CodeBlock implements Serializable, Component {
         this.codeBlock = codeBlock;
     }
 
-    public StringBuilder getCodeBlock() {
-        return codeBlock;
-    }
-
-    public void setCodeBlock(StringBuilder codeBlock) {
-        this.codeBlock = codeBlock;
-    }
 
     @Override
     public boolean equals(Object o) {
